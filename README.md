@@ -18,9 +18,9 @@
 
 # 🧑🏻 **Abhijeet Kale**
 
-- Github:()
-- Linkedin:()
-- Email: ()
+- Github:(https://github.com/abhi5733)
+- Linkedin:(https://www.linkedin.com/in/abhijeet-kale-588b77238/)
+- Email: (abhijeetkale5733@gmail.com)
 
 # 👱🏻‍♂️ **Ravichandra Koli**
 
