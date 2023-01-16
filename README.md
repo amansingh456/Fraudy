@@ -30,9 +30,9 @@
 
 # 🧑🏻‍🦰 **Lipan Padhan**
 
-- Github:()
-- Linkedin:()
-- Email: ()
+- Github:(https://github.com/lipan1437)
+- Linkedin:(https://www.linkedin.com/in/lipan-padhan-a0bb381a5/)
+- Email: (lipanpadhan1432@gmail.com)
 
 
 
