@@ -1,9 +1,14 @@
 import './App.css';
+import { CartRight } from './Components/Cart/CartRight';
+import { ProductCard } from './Components/ProductCard';
+import { CartPage } from './Pages/CartPage';
 
 function App() {
   return (
     <div className="App">
-      <h1>Bebakoof.com</h1>
+      <CartPage />
+      {/* <CartRight /> */}
+      {/* <ProductCard /> */}
     </div>
   );
 }
