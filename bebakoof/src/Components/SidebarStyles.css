@@ -1,0 +1,12 @@
+.sidebar-container {
+   border: 1px solid transparent;
+   width: 100%;
+}
+.sidebar-container   hr{
+   border: 1.3px solid #fcdc6a;
+   width: 50%;
+}
+.sidebar-container  h4 {
+color: #b5c6e0;
+font-weight: bold;
+}
