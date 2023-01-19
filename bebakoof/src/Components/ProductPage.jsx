@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { getProducts } from "../Redux/action";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { BiRupee } from "react-icons/bi";
 import "./ProductPageStyles.css";
 import Sidebar from "./Sidebar";
 const ProductPage = () => {
@@ -52,10 +51,7 @@ const ProductPage = () => {
                     <h4>{el.Brand}</h4>
                     <p>{el.name}</p>
                     <p>
-                      <span>
-                        <BiRupee />
-                      </span>
-                      <span>{el.price}</span>
+                      <span>₹{el.price}</span> <del>₹{el.oldprice}</del>
                     </p>
                   </div>
                   <div>

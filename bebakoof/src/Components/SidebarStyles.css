@@ -1,12 +1,32 @@
-.sidebar-container {
-   border: 1px solid transparent;
+
+.sidebar-container{
+   overflow: auto;
    width: 100%;
 }
-.sidebar-container   hr{
+.heading {
+   font-size: 30px;
+   font-weight: bold;
+   line-height: 22px;
+   width: 300px;
+   margin-left: 50px
+}
+.heading span {
+   color: #b5c6e0;
+   opacity: 0.8;
+   font-weight: lighter;
+}
+.heading hr{
    border: 1.3px solid #fcdc6a;
    width: 50%;
+   margin-left: 15px;
 }
-.sidebar-container  h4 {
+
+.inside-container {
+   border: 1px solid transparent;
+   width: 80%;
+   margin-bottom: 50px;
+}
+.inside-container  h4 {
 color: #b5c6e0;
 font-weight: bold;
 }

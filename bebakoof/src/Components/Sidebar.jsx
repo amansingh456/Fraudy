@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import "./SidebarStyles.css";
 const Sidebar = () => {
@@ -29,74 +30,77 @@ const Sidebar = () => {
     sort && (params.sort = sort);
     setSearchParams(params);
   }, [category, setSearchParams, sort]);
-
+  const products = useSelector((store) => store.products);
   return (
     <div className="sidebar-container">
-      <div>
-        <h2>
-          Men Clothing
-          <hr />
-        </h2>
-        <h4>FILTERS</h4>
+      <p className="heading">
+        Men Clothing <span>( {products.length} )</span>
+        <hr />
+      </p>
+
+      <div className="inside-container">
         <div>
-          <p>Category</p>
+          <h4>FILTERS</h4>
           <div>
-            <input
-              type="checkbox"
-              value="shirt"
-              onChange={handleChange}
-              checked={category.includes("shirt")}
-            />
-            <label>shirt</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              value="t-shirt"
-              onChange={handleChange}
-              checked={category.includes("t-shirt")}
-            />
-            <label>t-shirt</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              value="jeans"
-              onChange={handleChange}
-              checked={category.includes("jeans")}
-            />
-            <label>jeans</label>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              value="kurta"
-              onChange={handleChange}
-              checked={category.includes("kurta")}
-            />
-            <label>kurta</label>
+            <p>Category</p>
+            <div>
+              <input
+                type="checkbox"
+                value="shirt"
+                onChange={handleChange}
+                checked={category.includes("shirt")}
+              />
+              <label>shirt</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                value="t-shirt"
+                onChange={handleChange}
+                checked={category.includes("t-shirt")}
+              />
+              <label>t-shirt</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                value="jeans"
+                onChange={handleChange}
+                checked={category.includes("jeans")}
+              />
+              <label>jeans</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                value="kurta"
+                onChange={handleChange}
+                checked={category.includes("kurta")}
+              />
+              <label>kurta</label>
+            </div>
           </div>
         </div>
-      </div>
-      <h4>SORT</h4>
-      <p>Price</p>
-      <div onChange={handleSort}>
-        <input
-          type="radio"
-          value="asc"
-          name="sortBy"
-          defaultChecked={sort === "asc"}
-        />
+        <h4>SORT</h4>
+        <p>Price</p>
+        <div onChange={handleSort}>
+          <input
+            type="radio"
+            value="asc"
+            name="sortBy"
+            defaultChecked={sort === "asc"}
+          />
+          <label>Low-to-High</label>
+          <br />
+          <input
+            type="radio"
+            value="desc"
+            name="sortBy"
+            defaultChecked={sort === "desc"}
+          />
 
-        <label> High-to-Low</label>
-        <br />
-        <input
-          type="radio"
-          value="desc"
-          name="sortBy"
-          defaultChecked={sort === "desc"}
-        />
-        <label>Low-to-High</label>
+          <label>High-to-Low</label>
+        </div>
       </div>
     </div>
   );

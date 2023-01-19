@@ -2,9 +2,6 @@ import {
   GET_USER_FAILURE,
   GET_USER_REQUEST,
   GET_USER_SUCCESS,
-  GET_WHISHLIST_FAILURE,
-  GET_WHISHLIST_REQUEST,
-  GET_WHISHLIST_SUCCESS,
 } from "./actionTypes";
 
 const initialState = {
