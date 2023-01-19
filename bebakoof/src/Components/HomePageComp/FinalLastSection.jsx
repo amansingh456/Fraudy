@@ -19,7 +19,7 @@ const FinalLastSection = () => {
         <ImageWrapper>
          <img src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1672040129.jpg" alt="Yellow_Design" width="100%" />
         </ImageWrapper>  
-        <ImageWrapper style={{marginTop:"10px"}}>
+        <ImageWrapper style={{marginTop:"10px", marginBottom:"-10px"}}>
          <img src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1669022420.jpg" alt="Yellow_Design" width="100%" />
         </ImageWrapper>  
     </>
