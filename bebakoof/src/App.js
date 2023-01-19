@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <h1>Bebakoof.com</h1>
       <HomePage/>
-      <ProductPage/>
+      {/* <ProductPage/> */}
       {/* <Sidebar/> */}
     </div>
   );
