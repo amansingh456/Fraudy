@@ -3,7 +3,7 @@ import { MayLikeCard } from "./MayLikeCard"
 //import { Button } from "./Cart/CartElements"
 export const ProductCard = ()=>{
     return (
-        <Box border="1px solid grey" w="50%" h="auto" p="10px">
+        <Box border="1px solid grey" w="100%" h="auto" p="10px">
             <Heading textAlign={"left"}>My Bag 1 item</Heading>
             <Box border="1px solid grey" display="flex" p="5px" justifyContent="space-between">
                 <Box  textAlign={"left"}>
@@ -43,9 +43,9 @@ export const ProductCard = ()=>{
                 <Button fontSize="20px" w="100%" h="30px" border="1px solid grey">Move to Wish List</Button>
             </Box>
 
-            <Box textAlign={"left"} mt="50px">
+            <Box textAlign={"left"} mt="50px" >
                  <Text as="b" >My WIshlist</Text>
-                 <Box mt="20px" textAlign={"left"} p="5px" w="150px"> 
+                 <Box mt="20px" textAlign={"left"} p="5px" w="150px" className="wishlist"> 
                     <Image w="150px" h="250px" src="https://images.bewakoof.com/t320/men-s-black-riot-xxxtentican-oversized-t-shirt-568930-1673612996-1.jpg" />
                     <Text>Men's Black</Text>
                     <Text bg="hsla(0,0%,92.9%,.6)">₹550</Text>
@@ -53,9 +53,9 @@ export const ProductCard = ()=>{
                  </Box>
             </Box>
 
-            <Box mt="50px" textAlign={"left"}>
+            <Box mt="50px" textAlign={"left"} >
             <Text as="b" >You May also Like</Text>
-            <Box display={"flex"}>
+            <Box display={"grid"} className="maylike">
                 <MayLikeCard />
                 <MayLikeCard />
                 <MayLikeCard />

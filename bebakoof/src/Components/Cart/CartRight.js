@@ -1,18 +1,18 @@
 import {Text,Box,Center,Button,Heading, Link} from "@chakra-ui/react"
 import { ArrowRightIcon } from '@chakra-ui/icons'
-//import { Button } from './CartElements'
+
 
 export const CartRight = () => {
    
     return (
-        <Box>
+        <Box  classNmae="CartRight">
         
             <Center>
                 <Box>
-                    <Button backgroundColor="#fdd835" w="500px" h="30px" fontSize="14px" border="1px solid grey" borderRadius="5px" mt="10px" > Save Extra  ₹40  with Tribe  <ArrowRightIcon ml={"100px"}  /> </Button>
+                    <Button backgroundColor="#fdd835" w="500px" h="30px" fontSize="15px" border="1px solid grey" borderRadius="5px" mt="10px" > Save Extra  ₹40  with Tribe  <ArrowRightIcon ml={"100px"}  /> </Button>
                    
                     <Box w="500px"  border="1px solid grey" borderRadius="5px" mt="10px">
-                        <Text textAlign={"left"}>Whistles! Get extra 10% Cashback upto 100 on prepaid orders above Rs.699. Coupon code - MAD10.</Text>
+                        <Text textAlign={"left"} >Whistles! Get extra 10% Cashback upto 100 on prepaid orders above Rs.699. Coupon code - MAD10.</Text>
                     </Box>
                     
                     <Box w="500px"  border="1px solid grey" borderRadius="5px" mt="10px">
