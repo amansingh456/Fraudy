@@ -5,7 +5,7 @@ export const ProductCard = ()=>{
     return (
         <Box border="1px solid grey" w="100%" h="auto" p="10px">
             <Heading textAlign={"left"}>My Bag 1 item</Heading>
-            <Box border="1px solid grey" display="flex" p="5px" justifyContent="space-between">
+            <Box border="2px solid rgb(234, 234, 234)" display="flex" p="5px" justifyContent="space-between">
                 <Box  textAlign={"left"}>
                     <Text >Men's White Karma Circles Typography Oversized T-Shirt</Text>
                     <Text as="b">₹ 499</Text>
@@ -38,7 +38,7 @@ export const ProductCard = ()=>{
                 </Box>
             </Box>
 
-            <Box display="flex" >
+            <Box display="flex"  >
                 <Button fontSize="20px" w="100%" h="30px" border="1px solid grey">Remove</Button>
                 <Button fontSize="20px" w="100%" h="30px" border="1px solid grey">Move to Wish List</Button>
             </Box>
