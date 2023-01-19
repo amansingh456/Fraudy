@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { getProducts } from "../Redux/action";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
 import "./ProductPageStyles.css";
 import Sidebar from "./Sidebar";
 const ProductPage = () => {
@@ -27,16 +27,16 @@ const ProductPage = () => {
   }, [location.search, dispatch, products.length, searchParams, location]);
 
   const [whishlist, setWhishlist] = useState([]);
-
-  const handleClick = (id) => {
+  const handleClick = (id, i) => {
     let FilterData = products.filter((el) => {
       if (el.id === id) {
         return el;
       }
     });
-    setWhishlist([...whishlist, FilterData]);
+    setWhishlist([...whishlist, FilterData[0]]);
   };
-  localStorage.setItem("inputValue", JSON.stringify(whishlist));
+  localStorage.setItem("input", JSON.stringify(whishlist));
+
   return (
     <div className="main">
       <Sidebar />

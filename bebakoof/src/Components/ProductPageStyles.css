@@ -1,5 +1,11 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+
 .main {
   display: flex;
+  
 }
 .Card {
   display: grid;
@@ -10,6 +16,7 @@
   align-items: flex-start;
   flex-wrap: wrap;
   margin-top: 120px;
+  font-family: 'Lato', sans-serif;
 }
 .Card div {
   line-height: 14px;

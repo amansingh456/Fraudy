@@ -1,5 +1,6 @@
 import './App.css';
 import ProductPage from './Components/ProductPage';
+import Show from './Components/Show';
 
 
 
@@ -8,7 +9,7 @@ function App() {
     <div className="App">
       <h2>bebwakoof</h2>
       <ProductPage/>
-    
+     {/* <Show /> */}
     </div>
   );
 }

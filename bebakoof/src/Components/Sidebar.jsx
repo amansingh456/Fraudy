@@ -98,7 +98,6 @@ const Sidebar = () => {
             name="sortBy"
             defaultChecked={sort === "desc"}
           />
-
           <label>High-to-Low</label>
         </div>
       </div>
