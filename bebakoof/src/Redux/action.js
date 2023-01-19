@@ -30,3 +30,4 @@ return axios.get(`https://user-data-d84k.onrender.com/products`,  params).then((
  })
 
 }
+
