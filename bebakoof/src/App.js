@@ -1,17 +1,24 @@
 import './App.css';
 import ProductPage from './Components/ProductPage';
-import Show from './Components/Show';
-
+import WomensPage from './Components/WomensPage';
 
 
 function App() {
   return (
     <div className="App">
       <h2>bebwakoof</h2>
-      <ProductPage/>
-     {/* <Show /> */}
+      {/* <ProductPage/> */}
+      <WomensPage/>
     </div>
   );
 }
 
+
+
+
+
+
 export default App;
+
+
+

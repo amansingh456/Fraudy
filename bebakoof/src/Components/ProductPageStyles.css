@@ -1,11 +1,7 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 
 .main {
   display: flex;
-  
 }
 .Card {
   display: grid;
@@ -16,7 +12,9 @@
   align-items: flex-start;
   flex-wrap: wrap;
   margin-top: 120px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
+  width: 90%;
+  padding: 5px;
 }
 .Card div {
   line-height: 14px;
@@ -37,11 +35,13 @@
   width: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .Card {
     display: grid;
-    grid-template-columns: repeat(2, 300px);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
+    justify-content: start;
+    width: 60%;
     flex-wrap: wrap;
   }
 }
