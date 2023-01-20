@@ -82,8 +82,13 @@ const Sidebar = () => {
           </div>
         </div>
         <h4>SORT</h4>
-        <p>Price</p>
         <div onChange={handleSort}>
+          <select name="sortBy">
+            <option value="">Popular</option>
+            <option value="asc">Low-to-High</option>
+            <option value="desc">High-to-Low</option>
+          </select>
+
           <input
             type="radio"
             value="asc"
@@ -99,6 +104,13 @@ const Sidebar = () => {
             defaultChecked={sort === "desc"}
           />
           <label>High-to-Low</label>
+          <input
+            type="radio"
+            value=""
+            name="sortBy"
+            defaultChecked={sort === ""}
+          />
+          <label>Default</label>
         </div>
       </div>
     </div>

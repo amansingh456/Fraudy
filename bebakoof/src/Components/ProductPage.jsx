@@ -27,6 +27,7 @@ const ProductPage = () => {
   }, [location.search, dispatch, products.length, searchParams, location]);
 
   const [whishlist, setWhishlist] = useState([]);
+  const [cart, setCart] = useState([]);
   const handleClick = (id, i) => {
     let FilterData = products.filter((el) => {
       if (el.id === id) {
@@ -37,6 +38,18 @@ const ProductPage = () => {
   };
   localStorage.setItem("input", JSON.stringify(whishlist));
 
+  const handleCart = (id) => {
+
+    let Fill = products.filter((el) => {
+      if (el.id === id) {
+        return el;
+      }
+    });
+    setCart([...cart, Fill[0]]);
+  }
+  sessionStorage.setItem("cart", JSON.stringify(cart));
+
+  
   return (
     <div className="main">
       <Sidebar />
@@ -45,7 +58,7 @@ const ProductPage = () => {
           products.map((el) => {
             return (
               <div key={el.id}>
-                <img src={el.image} alt="prod_img" />
+                <img src={el.image} alt="prod_img"  onClick={()=>handleCart(el.id)} />
                 <div className="flextext">
                   <div>
                     <h4>{el.Brand}</h4>
