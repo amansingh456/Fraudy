@@ -17,6 +17,7 @@ text-align:left;
 padding:50px;
 `
 export const Parent = styled.div`
+margin:auto;
 
 text-align:left;
 
@@ -40,18 +41,20 @@ height:250px;
 `
 
 export const P1 = styled.p`
-font-size:15px;
+font-size:10px!important;;
 
 
 `
 export const P2 = styled.p`
-font-size:15px;
-font-weight:bold;
+    font-family: montserrat-semibold,sans-serif!important;
+    font-size: 16px!important;
+    line-height: 14px!important;
 `
 export const P3 = styled.p`
-font-size:15px;
-font-weight:bold;
-text-decoration: line-through
+font-family: montserrat-regular,sans-serif!important;
+font-size: 12px!important;
+line-height: 12px!important;
+
 `
 
 export const Button = styled.button`

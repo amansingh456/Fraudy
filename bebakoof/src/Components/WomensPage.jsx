@@ -2,19 +2,22 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
-import { getProducts, moveToCart, moveToWishlist } from "../Redux/action";
+import { getWomens, moveToCart, moveToWishlist } from "../Redux/action";
 import { AiOutlineHeart } from "react-icons/ai";
 import "./ProductPageStyles.css";
-import Sidebar from "./Sidebar";
+import WomenSidebar from "./WomenSidebar";
 
- export const ProductPage = () => {
+
+const WomensPage = () => {
   const products = useSelector((store) => store.products);
-  const wishlist = useSelector((store) => store.wishlist);
-  const carts = useSelector((store) => store.cart);
-
   const dispatch = useDispatch();
   const location = useLocation();
   const [searchParams] = useSearchParams();
+  const wishlist = useSelector((store) => store.wishlist);
+  console.log('wishlist', wishlist);
+  const carts = useSelector((store) => store.cart);
+  console.log('carts', carts);
+
 
   useEffect(() => {
     if (location || products.length === 0) {
@@ -26,11 +29,11 @@ import Sidebar from "./Sidebar";
           _order: sortBy,
         },
       };
-      dispatch(getProducts(getProductsParams));
+      dispatch( getWomens(getProductsParams));
     }
   }, [location.search, dispatch, products.length, searchParams, location]);
 
-  const handleClick = (id) => {
+ const handleClick = (id) => {
     let FilterData = products.filter((el) => {
       if (el.id === id) {
         return el;
@@ -46,20 +49,16 @@ import Sidebar from "./Sidebar";
     });
     dispatch(moveToCart(Fill[0]));
   };
-
+  
   return (
     <div className="main">
-      <Sidebar />
+       <WomenSidebar/>
       <div className="Card">
         {products.length > 0 &&
           products.map((el) => {
             return (
               <div key={el.id}>
-                <img
-                  src={el.image}
-                  alt="prod_img"
-                  onClick={() => handleCart(el.id)}
-                />
+                <img src={el.image} alt="prod_img"  onClick={()=>handleCart(el.id)} />
                 <div className="flextext">
                   <div>
                     <h4>{el.Brand}</h4>
@@ -69,7 +68,7 @@ import Sidebar from "./Sidebar";
                     </p>
                   </div>
                   <div>
-                  <AiOutlineHeart onClick={() => handleClick(el.id)} />
+                    <AiOutlineHeart onClick={() => handleClick(el.id)} />
                   </div>
                 </div>
               </div>
@@ -79,3 +78,7 @@ import Sidebar from "./Sidebar";
     </div>
   );
 };
+
+
+
+export default WomensPage;

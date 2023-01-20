@@ -1,9 +1,18 @@
 import {Text,Box,Center,Button,Heading, Link} from "@chakra-ui/react"
 import { ArrowRightIcon } from '@chakra-ui/icons'
+import { useSelector } from "react-redux";
 
 
 export const CartRight = () => {
-   
+   const cart = useSelector((store)=>store.cart)
+      let MRP=0;
+      let totalPrice=0;
+     cart.map((el)=>{
+        MRP+=el.oldprice;
+        totalPrice+=el.price
+      })
+      let Charges = MRP-totalPrice
+     //console.log(MRP)
     return (
         <Box  classNmae="CartRight">
         
@@ -28,19 +37,22 @@ export const CartRight = () => {
                         <Box p="0px 8px 0px 8px">
                             <Box display="flex" justifyContent="space-between">
                                 <Text>Total MRP (Incl. of taxes) </Text>
-                                <Text>₹ 1049</Text>
+                                <Text>₹ {MRP}</Text>
                             </Box>
                             <Box display="flex" justifyContent="space-between">
                                 <Text>Shipping Charges  </Text>
-                                <Text>₹ 1049</Text>
+                                <Text color={"#1d8802"}>FREE</Text>
                             </Box>
                             <Box display="flex" justifyContent="space-between">
                                 <Text>Bag Discount  </Text>
-                                <Text>₹ 1049</Text>
+                                <Text>₹{Charges}</Text>
                             </Box>
                             <Box display="flex" justifyContent="space-between">
                                 <Text>Subtotal  </Text>
-                                <Text>₹ 1049</Text>
+                                <Text>₹ {totalPrice}</Text>
+                            </Box>
+                            <Box>
+                                <Button mb="10px" w="400px" h="30px" fontSize={"12px"} textAlign="left" color={"rgb(29, 136, 2)"} borderRadius={"14px"}>You are saving ₹ {Charges} on this order</Button>
                             </Box>
                             
                         </Box>
@@ -48,16 +60,14 @@ export const CartRight = () => {
                                 <Box fontSize="15px" display="block">
                                     <Box> <Text as ="b">TOTAL</Text></Box>
                                    
-                                   <Box fontSize={"15px"}><Text as="b" >₹499</Text></Box> 
+                                   <Box fontSize={"15px"}><Text as="b" >₹{totalPrice}</Text></Box> 
                                     
                                 </Box>
                                
-                                    <Button w="340px" fontSize={"18px"} h="60px" border="none" bg="rgb(66, 162, 162)" borderRadius="5px">
-                                    <Link href="" textDecoration={"none"}  color="white"> ADD ADDRESS </Link>
-                                    </Button>
-                                    
-                               
-                               
+                                <Button w="340px" fontSize={"18px"} h="60px" border="none" bg="rgb(66, 162, 162)" borderRadius="5px">
+                                    <Link href="" textDecoration={"none"}  color="white"> ADD AMOUNT </Link>
+                                </Button>
+                              
                         </Box>
                     </Box>
                 </Box>  
