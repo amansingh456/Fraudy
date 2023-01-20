@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
-import { getProducts, moveToCart, moveToWishlist } from "../Redux/action";
+import { addToCart, addToWishlist, getProducts, moveToCart, moveToWishlist } from "../Redux/action";
 import { AiOutlineHeart } from "react-icons/ai";
 import "./ProductPageStyles.css";
 import Sidebar from "./Sidebar";
-
- export const ProductPage = () => {
+const ProductPage = () => {
   const products = useSelector((store) => store.products);
-  const wishlist = useSelector((store) => store.wishlist);
-  const carts = useSelector((store) => store.cart);
-
   const dispatch = useDispatch();
   const location = useLocation();
   const [searchParams] = useSearchParams();
@@ -36,7 +32,7 @@ import Sidebar from "./Sidebar";
         return el;
       }
     });
-    dispatch(moveToWishlist(FilterData[0]));
+    dispatch(addToWishlist(FilterData[0]));
   };
   const handleCart = (id) => {
     let Fill = products.filter((el) => {
@@ -44,7 +40,8 @@ import Sidebar from "./Sidebar";
         return el;
       }
     });
-    dispatch(moveToCart(Fill[0]));
+    window.alert("added successful")
+    dispatch(addToCart(Fill[0]));
   };
 
   return (
@@ -69,7 +66,7 @@ import Sidebar from "./Sidebar";
                     </p>
                   </div>
                   <div>
-                  <AiOutlineHeart onClick={() => handleClick(el.id)} />
+                    <AiOutlineHeart onClick={() => handleClick(el.id)} />
                   </div>
                 </div>
               </div>
@@ -79,3 +76,5 @@ import Sidebar from "./Sidebar";
     </div>
   );
 };
+
+export default ProductPage;

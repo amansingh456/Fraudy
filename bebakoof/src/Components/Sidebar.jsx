@@ -35,9 +35,9 @@ const Sidebar = () => {
     <div className="sidebar-container">
       <p className="heading">
         Men Clothing <span>( {products.length} )</span>
-        <hr />
+       
       </p>
-
+      <hr />
       <div className="inside-container">
         <div>
           <h4>FILTERS</h4>

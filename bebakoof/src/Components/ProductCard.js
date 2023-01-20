@@ -1,47 +1,57 @@
 import { Box, Button, Select, Heading, Text, Image } from "@chakra-ui/react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { moveToWishlist, removeToCart, removeToWishlist } from "../Redux/action"
+import { addToWishlist, deleteToCart, getToCart, moveToWishlist, removeToCart, removeToWishlist } from "../Redux/action"
 import { EmptyCart } from "./EmptyCart"
 import { MayLikeCard } from "./MayLikeCard"
 
 //import { Button } from "./Cart/CartElements"
 export const ProductCard = () => {
+    const isLoading = useSelector((store)=>store.isLoading)
     const dispatch = useDispatch()
     const cart = useSelector((store) => store.cart)
-    const [qty, setQty] = useState(1)
+    const [qty, setQty] = useState(null)
 
-    console.log(cart,"cart-total")
+    
 
     const handleAdd = (id) => {
         let moveData = cart.filter((el) => {
             return el.id == id
             })
             console.log(moveData, "moveData")
-            dispatch(moveToWishlist(moveData))
+            dispatch(addToWishlist(moveData[0]))
 
-            let FilterData = cart.filter(el => {
-                console.log(el.id,id)
-                return el.id != id
-            })
-        console.log(FilterData, "filter")
-        dispatch(removeToCart(FilterData[0]))
-        console.log(cart,"remove")
+            
+        
+        dispatch(deleteToCart(id))
+        
      }
        
     const handleRemove = (id) => {
-         console.log(id,"id")
-        let FilterData = cart.filter(el => {
-            return el.id != id
-        })
-        dispatch(removeToCart(FilterData))
-        // console.log("delete",FilterData)
+       
+        dispatch(deleteToCart(id))
+        
 
     }
-    const handleChange =(id) => {
-         
+    const handleQtyChange =(id,e) => {
+         let newQty = qty.map((el)=>{
+            
+         })
     }
+    useEffect(()=>{
+       // console.log('ghh')
+       if(!isLoading)
+        dispatch(getToCart())
+    },[isLoading])
+
+    useEffect(()=>{
+        let quantity = cart.map((el)=>{
+            return {id:el.id,qty:1}
+        })
+        setQty(quantity)
+    },[])
     //console.log(qty,"qquantity")
+    //console.log(cart,"cart-total")
     return (
         <Box w="100%" h="auto" p="10px">
             {cart.length>0?<Heading textAlign={"left"}>My Bag {cart.length} item</Heading>:""}
@@ -49,7 +59,7 @@ export const ProductCard = () => {
             {
                 cart.length > 0 ?
 
-                    cart.map((el) => {
+                    cart.map((el,idx) => {
 
                         return (
                             <Box mb="10px" key={el.id}>
@@ -67,7 +77,7 @@ export const ProductCard = () => {
                                                 <option value='2XL'>2XL</option>
                                                 <option value='3XL'>3XL</option>
                                             </Select>
-                                            <Select placeholder='Qty:1' value={qty} onChange={(e)=> setQty(e.target.value)} p="5px">
+                                            <Select placeholder='Qty:1' value={qty?.[idx].qty} onChange={(e)=>handleQtyChange(el.id,e)} p="5px">
                                                 <option value='1'>1</option>
                                                 <option value='2'>2</option>
                                                 <option value='3'>3</option>

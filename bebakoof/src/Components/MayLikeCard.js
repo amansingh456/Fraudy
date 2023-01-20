@@ -2,20 +2,18 @@ import {Text} from "@chakra-ui/react"
 import { useEffect } from "react"
 import { CiCircleRemove } from "react-icons/ci"
 import { useDispatch, useSelector } from "react-redux"
-import { moveToCart, removeToWishlist } from "../Redux/action"
+import { addToCart, deleteToWishlist, getToWishlist, moveToCart, removeToWishlist } from "../Redux/action"
 import { EmptyWishlist } from "./EmptyWishlist"
 import { Wrapper,Button,P1,P2,P3,Img,Parent,Grand } from "./MaylikeCardElement"
 export const MayLikeCard =  () => {
+    const isLoading = useSelector((store)=>store.isLoading)
    const dispatch= useDispatch();
     const wishlist= useSelector((store)=>store.wishlist)
      console.log(wishlist,"wish")
     const handleRemove = (id) => {
-        
-        let FilterData = wishlist.filter(el=>{
-            return el.id != id
-        })
-         dispatch(removeToWishlist(FilterData)) 
-        //console.log("delete", FilterData)
+       
+         dispatch(deleteToWishlist(id)) 
+       
     }
    
     const handleAdd = (id) => {
@@ -26,14 +24,15 @@ export const MayLikeCard =  () => {
             }
         })
        
-        dispatch(moveToCart(filterData))
-        let FilterData = wishlist.filter(el=>{
-            return el.id != id
-        })
-         dispatch(removeToWishlist(FilterData)) 
+        dispatch(addToCart(filterData))
+        
+         dispatch(deleteToWishlist(id)) 
     }
-
+  useEffect(()=>{
+  if(!isLoading)  dispatch(getToWishlist())
+  },[isLoading])
    
+  
     return (
         
         <Grand>

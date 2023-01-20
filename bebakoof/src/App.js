@@ -6,7 +6,7 @@ import { WishlistPage } from './Pages/WishlistPage';
 import { MayLikeCard } from './Components/MayLikeCard';
 import { EmptyCart } from './Components/EmptyCart';
 import { EmptyWishlist } from './Components/EmptyWishlist';
-import {ProductPage} from "./Components/ProductPage"
+import ProductPage from "./Components/ProductPage"
 
 function App() {
  
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <h1>Bebakoof.com</h1>
       <CartPage />
-      {/* <MayLikeCard /> */}
+      <MayLikeCard />
       <ProductPage/> 
       {/* <Sidebar/> */}
       {/* <EmptyCart />

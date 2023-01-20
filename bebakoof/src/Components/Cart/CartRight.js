@@ -14,7 +14,7 @@ export const CartRight = () => {
       let Charges = MRP-totalPrice
      //console.log(MRP)
     return (
-        <Box  classNmae="CartRight">
+        <Box  className="CartRight">
         
             <Center>
                 <Box>
