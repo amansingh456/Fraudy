@@ -35,7 +35,7 @@ const ProductPage = () => {
         return el;
       }
     });
-    setWhishlist([...whishlist, FilterData]);
+    setWhishlist([...whishlist, FilterData[0]]);
   };
   
   localStorage.setItem("wishlist", JSON.stringify(whishlist));

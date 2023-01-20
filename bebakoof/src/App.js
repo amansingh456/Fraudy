@@ -15,11 +15,11 @@ function App() {
     <div className="App">
       <h1>Bebakoof.com</h1>
       {/* <CartPage /> */}
-     {/* <MayLikeCard data={data}/>
-      <ProductPage/> */}
+      <MayLikeCard data={data}/>
+      <ProductPage/> 
       {/* <Sidebar/> */}
-      <EmptyCart />
-      <EmptyWishlist />
+      {/* <EmptyCart />
+      <EmptyWishlist /> */}
     </div>
   );
 }

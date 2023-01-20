@@ -1,5 +1,6 @@
 import {Box, Button, Select, Heading,Text, Image } from "@chakra-ui/react"
 import { MayLikeCard } from "./MayLikeCard"
+
 //import { Button } from "./Cart/CartElements"
 export const ProductCard = (data)=>{
   

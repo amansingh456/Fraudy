@@ -4,7 +4,26 @@ export const Wrapper =styled.div`
 margin-top:20px;
 text-align:left;
 padding:5px;
-width:150px;
+width:250px;
+
+
+
+`
+export const Grand = styled.div`
+// border:1px solid green;
+margin:auto;
+width:80%;
+text-align:left;
+padding:50px;
+`
+export const Parent = styled.div`
+
+text-align:left;
+
+height:auto;
+display:grid;
+grid-template-columns: repeat(4,1fr);
+justify-content:space-between;
 
 @media screen and (max-width:777px){
     dispaly:grid;
@@ -16,26 +35,35 @@ width:150px;
 `
 
 export const Img= styled.img`
-width:150px;
+width:100%;
 height:250px;
 `
 
 export const P1 = styled.p`
 font-size:15px;
-font-weight:bold;
+
 
 `
 export const P2 = styled.p`
 font-size:15px;
 font-weight:bold;
+`
+export const P3 = styled.p`
+font-size:15px;
+font-weight:bold;
 text-decoration: line-through
 `
+
 export const Button = styled.button`
 width:100%;
 height:30px;
-color:teal;
-border:1px solid teal;
+border:1px solid #ccc;
+background-color: #fff;
+margin-bottom:4px;
+cursor: pointer;
 `
-
+// export const Icon =styled.CiCircleRemove`
+//  top:0px;
+// `
 
 
