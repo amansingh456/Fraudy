@@ -7,17 +7,15 @@ import { AiOutlineHeart } from "react-icons/ai";
 import "./ProductPageStyles.css";
 import WomenSidebar from "./WomenSidebar";
 
-
 const WomensPage = () => {
   const products = useSelector((store) => store.products);
   const dispatch = useDispatch();
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const wishlist = useSelector((store) => store.wishlist);
-  console.log('wishlist', wishlist);
+  console.log("wishlist", wishlist);
   const carts = useSelector((store) => store.cart);
-  console.log('carts', carts);
-
+  console.log("carts", carts);
 
   useEffect(() => {
     if (location || products.length === 0) {
@@ -29,11 +27,11 @@ const WomensPage = () => {
           _order: sortBy,
         },
       };
-      dispatch( getWomens(getProductsParams));
+      dispatch(getWomens(getProductsParams));
     }
   }, [location.search, dispatch, products.length, searchParams, location]);
 
- const handleClick = (id) => {
+  const handleClick = (id) => {
     let FilterData = products.filter((el) => {
       if (el.id === id) {
         return el;
@@ -49,16 +47,20 @@ const WomensPage = () => {
     });
     dispatch(moveToCart(Fill[0]));
   };
-  
+
   return (
     <div className="main">
-       <WomenSidebar/>
+      <WomenSidebar />
       <div className="Card">
         {products.length > 0 &&
           products.map((el) => {
             return (
               <div key={el.id}>
-                <img src={el.image} alt="prod_img"  onClick={()=>handleCart(el.id)} />
+                <img
+                  src={el.image}
+                  alt="prod_img"
+                  onClick={() => handleCart(el.id)}
+                />
                 <div className="flextext">
                   <div>
                     <h4>{el.Brand}</h4>
@@ -78,7 +80,5 @@ const WomensPage = () => {
     </div>
   );
 };
-
-
 
 export default WomensPage;

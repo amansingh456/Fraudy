@@ -75,3 +75,25 @@ export const getWomens = (params) => (dispatch) => {
       dispatch(getProductFailure());
     });
 };
+
+export const addToCart = (params) => (dispatch) => {
+
+    return axios.post(`https://user-data-d84k.onrender.com/cart`, params)
+    .then((res)=>{
+      dispatch(addToCart(res.data))
+    }).catch((e)=>{
+      console.log(e)
+    })
+
+
+}
+
+export const addToWishlist = (params) => (dispatch) => {
+
+  return axios.post(`https://user-data-d84k.onrender.com/wishlist`, params)
+  .then((res)=>{
+    dispatch(addToWishlist(res.data))
+  }).catch((e)=>{
+    console.log(e)
+  })
+}

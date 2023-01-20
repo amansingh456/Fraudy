@@ -2,6 +2,9 @@
 
 .main {
   display: flex;
+  width: 100%;
+  background: linear-gradient(to right, #6ff7e8,
+  #0f68a9);
 }
 .Card {
   display: grid;
@@ -13,8 +16,10 @@
   flex-wrap: wrap;
   margin-top: 120px;
   font-family: "Lato", sans-serif;
-  width: 90%;
+   margin-left: 320px;
+   width: inherit;
   padding: 5px;
+
 }
 .Card div {
   line-height: 14px;
@@ -35,13 +40,18 @@
   width: 100%;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
   .Card {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 200px);
     grid-template-rows: auto;
-    justify-content: start;
-    width: 60%;
+    gap: 15px;
     flex-wrap: wrap;
+    margin-top: 120px;
+    font-family: "Lato", sans-serif;
+    padding: 5px;
+    margin-left: 300px;
+    width: 60%;
+    float: right;
   }
 }
