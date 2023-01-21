@@ -1,13 +1,16 @@
-import { Box, Button, FormLabel, Heading, Input } from '@chakra-ui/react'
+import { Box, Button, FormControl, FormErrorMessage, FormLabel, Heading, Input, VStack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { signInWithEmailAndPassword , updateProfile } from 'firebase/auth';
 import { auth } from './firebase';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
+import * as yup from "yup"
+import { useFormik } from 'formik'
+import swal from 'sweetalert';
 const Login = () => {
 
      const navigate = useNavigate()
+
     const[email,Setemail] = useState("")
     const[pass,Setpass] = useState("")
 
@@ -20,20 +23,25 @@ const Login = () => {
   )
     console.log(names,emails)
 
-    const  submit = ()=>{
-       
-        if(email && pass){
 
-            signInWithEmailAndPassword(auth,email,pass).then(res=>{ Setemail("");Setpass("");navigate("/");console.log(res)} )
-            .catch(err=> {alert("enter correct details") ;console.log(err)})
+    const formik = useFormik({
+      initialValues:{
+          email:"" ,
+          password:"" ,
+      } ,
+      validationSchema: yup.object({
+          email : yup.string().required("email Required").min(6,"email is too Short") ,
+          password : yup.string().required(" password Required").min(6," password is too Short")
+      }),
+      onSubmit :  (values,actions) =>{
         
-        }else{
-            alert("enter all details")
-            return
-        }
- 
-        
+          signInWithEmailAndPassword(auth,values.email,values.password).then(res=>{console.log(res);navigate("/");swal("Login Success", "Happy Shopping", "success")} )
+          .catch(err=>console.log(err))
+          actions.resetForm()
       }
+  })
+
+   
 
 
 
@@ -47,15 +55,34 @@ const Login = () => {
 
     <Box bg="white" width="80%"  height={["400px" , "500px" , "600px" ,  "600px"]}  mx="auto"  >
 
- <Box pt={20} width={[ "70%", "60%" , "40%","50%"]} px={2} py={5}     height={[ "300px" ,  "300px" ,  "450px", "500px"]} margin="auto"  >
+
+
+ 
+ <VStack pt={20} width={[ "70%", "60%" , "40%","50%"]} px={2} py={5}     height={[ "300px" ,  "300px" ,  "450px", "500px"]} margin="auto"   as="form" onSubmit={formik.handleSubmit} >
+  
+  <Heading>Log In</Heading>
+<FormControl isInvalid={formik.errors.email && formik.touched.email} >
+    <FormLabel>email</FormLabel>
+    <Input name="email" type="email"  placeholder="enter email" onChange={formik.handleChange}  value={formik.values.email} 
+    onBlur={formik.handleBlur} />
+    <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
+</FormControl>
+<FormControl isInvalid={formik.errors.password && formik.touched.password } >
+    <FormLabel>Password</FormLabel>
+    <Input  name="password"  type="password"  placeholder="enter Username" onChange={formik.handleChange} value={formik.values.password} 
+      onBlur={formik.handleBlur} />
+    <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
+</FormControl>
+<Box> 
+<Button width="100%" bgColor="red" display="block" margin="auto" mt={20} type="submit" _hover={{color:"white"}}  >Submit</Button>
+</Box>
+    </VStack>
    
-   <Heading size={["sm","md","md","lg"]} pt={10} >Log in to your account</Heading>
-  <FormLabel mt={[5,10,10,10]} >Email</FormLabel>
-  <Input  border="1px solid black" defaultValue={email} onChange={(e)=>Setemail(e.target.value)} /> 
-  <FormLabel mt={[2,5,5,5]} >Password</FormLabel>
-  <Input border="1px solid black"  onChange={(e)=>Setpass(e.target.value)} /> 
-<Button width="100%" bgColor="red" display="block" margin="auto" mt={[5,5,10,10]} onClick={()=>submit()} >Login</Button>
- </Box>
+ 
+
+
+
+
 
     </Box>
 
