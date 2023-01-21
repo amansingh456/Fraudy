@@ -62,39 +62,40 @@ const googleSignin=()=>{
   return (
     <Box   >
 
- <Flex justifyContent="space-between"  >
-    <VStack bg="yellow.100" height="640px" width="50%" p={5} >
+ <Flex justifyContent="space-between" flexDirection={["column","column","column","row"  ]} border="1px solid black" >
+    <VStack bg="yellow.100" height="640px" p={5}  >
         <Heading>Welcome to the world of fraudy!</Heading>
         <Box pt={100}  > 
         <Image width="100%" src="https://images.bewakoof.com/web/group-19-1617704502.png" />
         </Box>
     </VStack>
-    <VStack p={5}  width="50%" >
+    <VStack p={5}     >
 
    <Heading fontSize={"2xl"} >Signup</Heading>
 
    <Text pt={5} fontSize="lg" >Hi new buddy, let's get you started with the fraudy!</Text>
  
-  <Box  p={5}  width="50%" > 
-   <Input placeholder='Enter name' marginBottom={5}  type="name" onChange={(e)=>Setname(e.target.value)}  value={name} />
-   <Input  placeholder='Email Id'  type="email" marginBottom={5} onChange={(e)=>Setemail(e.target.value)} value={email} />
-   <Input placeholder='Password'  type="password" onChange={(e)=>Setpass(e.target.value)} value={pass} />
+  <Box  p={5}  width={[ "90%","400px","50%","50%"]} > 
+   <Input border="1px solid black" placeholder='Enter name' marginBottom={5}  type="name" onChange={(e)=>Setname(e.target.value)}  value={name} />
+   <Input border="1px solid black"  placeholder='Email Id'  type="email" marginBottom={5} onChange={(e)=>Setemail(e.target.value)} value={email} />
+   <Input border="1px solid black" placeholder='Password'  type="password" onChange={(e)=>Setpass(e.target.value)} value={pass} />
    </Box>
    
-   <Button disabled={close} bgColor="cyan.300" _hovercolor="white" width="45%" onClick={()=>submit()} >Proceed</Button> 
+   <Button disabled={close} bgColor="cyan.300" _hovercolor="white"  width={[ "80%","300px","40%","40%"]} onClick={()=>submit()} >Proceed</Button> 
    <Box pt={5} > 
- <Flex  alignItems="center" > <Text>Already have an Account</Text> <Link to="/Login" >  <Text ml={5} bgColor="blue.100" color_hover="white" fontWeight="bold" borderRadius={5}  p={2} >Login</Text> </Link> </Flex> 
+ <Flex width={[ "90%","","",""]} alignItems="center" > <Text>Already have an Account</Text> <Link to="/Login" >  <Text ml={5} bgColor="blue.100" color_hover="white" fontWeight="bold" borderRadius={5}  p={2} >Login</Text> </Link> </Flex> 
 
  </Box>
 
  <Box bor pt={5} >
-    <Flex> 
+    <Flex flexDirection={["column","column","row","row"  ]} >
+      <VStack> 
  <Link>   <Flex onClick={googleSignin}  border="1px solid black" borderRadius={5} width="200px" px={5} py={2}  >
         <FcGoogle size={30} />   <Text  ml={5}  fontWeight="semibold" >Google</Text> 
-    </Flex> </Link>
-    <Link to="/Login" >   <Flex ml={5}  onClick={googleSignin} border="1px solid black" borderRadius={5} width="200px" px={5} py={2}  >
+    </Flex> </Link> </VStack> 
+    <Link to="/Login" >   <VStack> <Flex ml={[0,0,5,5]} mt={[5,10,0,0]}  onClick={googleSignin} border="1px solid black" borderRadius={5} width="200px" px={5} py={2}  >
         <AiFillFacebook size={30} />   <Text ml={5} fontWeight="semibold" >Facebook</Text> 
-    </Flex> </Link>
+    </Flex> </VStack> </Link>
     </Flex>
 </Box>
 
