@@ -14,6 +14,8 @@ import logo from "../images/logo.png"
 import { useDispatch, useSelector } from 'react-redux';
 import { VscAccount } from "react-icons/vsc";
 import { LogoutFunctionSuccess } from '../AuthReducer/action';
+
+
 const Navbar = () => {
 
  const dispatch = useDispatch()
@@ -25,6 +27,7 @@ const Navbar = () => {
    store.AuthReducer.name
   )
 
+  console.log(names)
 
   const logout=()=>{
    

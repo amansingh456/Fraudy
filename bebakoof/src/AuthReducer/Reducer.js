@@ -11,7 +11,7 @@ export const reducer = (state=initialState,{type,payload})=>{
     switch(type){
 
     case  LoginSuccess :
-        return{...state,name:payload.name,email:payload.email,isAuth:true}
+        return{...state,name:payload.names,email:payload.emails,isAuth:true}
    
    case LogoutSuccess:
     return{...state,name:"",email:"",isAuth:false}
