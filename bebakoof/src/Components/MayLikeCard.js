@@ -24,7 +24,7 @@ export const MayLikeCard =  () => {
             }
         })
        
-        dispatch(addToCart(filterData))
+        dispatch(addToCart(filterData[0]))
         
          dispatch(deleteToWishlist(id)) 
     }

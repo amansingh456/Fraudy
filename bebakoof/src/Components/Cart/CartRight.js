@@ -65,7 +65,7 @@ export const CartRight = () => {
                                 </Box>
                                
                                 <Button w="340px" fontSize={"18px"} h="60px" border="none" bg="rgb(66, 162, 162)" borderRadius="5px">
-                                    <Link href="" textDecoration={"none"}  color="white"> ADD AMOUNT </Link>
+                                    <Link href="" textDecoration={"none"}  color="white"> CHECK OUT </Link>
                                 </Button>
                               
                         </Box>

@@ -10,7 +10,7 @@ export const ProductCard = () => {
     const isLoading = useSelector((store)=>store.isLoading)
     const dispatch = useDispatch()
     const cart = useSelector((store) => store.cart)
-    const [qty, setQty] = useState(null)
+   // const [qty, setQty] = useState(null)
 
     
 
@@ -20,36 +20,30 @@ export const ProductCard = () => {
             })
             console.log(moveData, "moveData")
             dispatch(addToWishlist(moveData[0]))
-
-            
-        
-        dispatch(deleteToCart(id))
+            dispatch(deleteToCart(id))
         
      }
        
     const handleRemove = (id) => {
-       
-        dispatch(deleteToCart(id))
-        
-
-    }
-    const handleQtyChange =(id,e) => {
-         let newQty = qty.map((el)=>{
-            
-         })
-    }
+            dispatch(deleteToCart(id))
+        }
+    // const handleQtyChange =(id,e) => {
+    //      let newQty = qty.map((el)=>{
+    //         return {...el,qty[e.target.value]}
+    //      })
+    // }
     useEffect(()=>{
        // console.log('ghh')
        if(!isLoading)
         dispatch(getToCart())
     },[isLoading])
 
-    useEffect(()=>{
-        let quantity = cart.map((el)=>{
-            return {id:el.id,qty:1}
-        })
-        setQty(quantity)
-    },[])
+    // useEffect(()=>{
+    //     let quantity = cart.map((el)=>{
+    //         return {id:el.id,qty:1}
+    //     })
+    //     setQty(quantity)
+    // },[])
     //console.log(qty,"qquantity")
     //console.log(cart,"cart-total")
     return (
@@ -77,7 +71,7 @@ export const ProductCard = () => {
                                                 <option value='2XL'>2XL</option>
                                                 <option value='3XL'>3XL</option>
                                             </Select>
-                                            <Select placeholder='Qty:1' value={qty?.[idx].qty} onChange={(e)=>handleQtyChange(el.id,e)} p="5px">
+                                            <Select placeholder='Qty:1'  p="5px">
                                                 <option value='1'>1</option>
                                                 <option value='2'>2</option>
                                                 <option value='3'>3</option>
