@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
-import { getWomens, moveToCart, moveToWishlist } from "../Redux/action";
+import { addToCart, addToWishlist, getWomens} from "../Redux/action";
 import { AiOutlineHeart } from "react-icons/ai";
+import {BsFillCartPlusFill} from "react-icons/bs"
 import "./ProductPageStyles.css";
 import WomenSidebar from "./WomenSidebar";
 
@@ -37,7 +38,8 @@ const WomensPage = () => {
         return el;
       }
     });
-    dispatch(moveToWishlist(FilterData[0]));
+    window.alert("added to wishlist")
+    dispatch(addToWishlist(FilterData[0]));
   };
   const handleCart = (id) => {
     let Fill = products.filter((el) => {
@@ -45,7 +47,8 @@ const WomensPage = () => {
         return el;
       }
     });
-    dispatch(moveToCart(Fill[0]));
+    window.alert("added to cart")
+    dispatch(addToCart(Fill[0]));
   };
 
   return (
@@ -59,7 +62,6 @@ const WomensPage = () => {
                 <img
                   src={el.image}
                   alt="prod_img"
-                  onClick={() => handleCart(el.id)}
                 />
                 <div className="flextext">
                   <div>
@@ -69,7 +71,8 @@ const WomensPage = () => {
                       <span>₹{el.price}</span> <del>₹{el.oldprice}</del>
                     </p>
                   </div>
-                  <div>
+                  <div className="icon">
+                    <BsFillCartPlusFill   onClick={() => handleCart(el.id)}  />
                     <AiOutlineHeart onClick={() => handleClick(el.id)} />
                   </div>
                 </div>

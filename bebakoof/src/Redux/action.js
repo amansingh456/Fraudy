@@ -19,8 +19,6 @@ const getProductFailure = () => {
   };
 };
 
-
- 
 export const moveToCart = (payload) => {
   return {
     type: types.ADD_TO_CART,
@@ -46,9 +44,6 @@ const removeToWishlist = () => {
     type: types.REMOVE_TO_WISHLIST,
   };
 };
-
-
-
 
 export const getProducts = (params) => (dispatch) => {
   dispatch(getProductRequest());
@@ -77,23 +72,38 @@ export const getWomens = (params) => (dispatch) => {
 };
 
 export const addToCart = (params) => (dispatch) => {
-
-    return axios.post(`https://user-data-d84k.onrender.com/cart`, params)
-    .then((res)=>{
-      dispatch(addToCart(res.data))
-    }).catch((e)=>{
-      console.log(e)
+  return axios
+    .post(`https://user-data-d84k.onrender.com/cart`, params)
+    .then((res) => {
+      dispatch(addToCart(res.data));
     })
+    .catch((e) => {
+      console.log(e);
+    });
+};
 
 
-}
+
+export const deleteToCart = (id) => (dispatch) => {
+  return axios
+    .delete(`https://user-data-d84k.onrender.com/cart${id}`)
+    .then((res) => {
+      dispatch(removeToCart(res.data));
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+};
+
+
 
 export const addToWishlist = (params) => (dispatch) => {
-
-  return axios.post(`https://user-data-d84k.onrender.com/wishlist`, params)
-  .then((res)=>{
-    dispatch(addToWishlist(res.data))
-  }).catch((e)=>{
-    console.log(e)
-  })
-}
+  return axios
+    .post(`https://user-data-d84k.onrender.com/wishlist`, params)
+    .then((res) => {
+      dispatch(addToWishlist(res.data));
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+};

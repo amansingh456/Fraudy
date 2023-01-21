@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { addToCart, addToWishlist, getProducts, moveToCart, moveToWishlist } from "../Redux/action";
 import { AiOutlineHeart } from "react-icons/ai";
+import {BsFillCartPlusFill} from "react-icons/bs"
 import "./ProductPageStyles.css";
 import Sidebar from "./Sidebar";
 const ProductPage = () => {
@@ -55,7 +56,6 @@ const ProductPage = () => {
                 <img
                   src={el.image}
                   alt="prod_img"
-                  onClick={() => handleCart(el.id)}
                 />
                 <div className="flextext">
                   <div>
@@ -65,7 +65,8 @@ const ProductPage = () => {
                       <span>₹{el.price}</span> <del>₹{el.oldprice}</del>
                     </p>
                   </div>
-                  <div>
+                  <div className="icon">
+                    <BsFillCartPlusFill   onClick={() => handleCart(el.id)}  />
                     <AiOutlineHeart onClick={() => handleClick(el.id)} />
                   </div>
                 </div>

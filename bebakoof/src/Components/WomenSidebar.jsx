@@ -34,10 +34,8 @@ const WomenSidebar = () => {
   return (
     <div className="sidebar-container">
       <p className="heading">
-        Women Clothing <span>( {products.length} )</span>
-        <hr />
+        <u> Women Clothing</u><span>( {products.length} )</span>
       </p>
-
       <div className="inside-container">
         <div>
           <h4>FILTERS</h4>

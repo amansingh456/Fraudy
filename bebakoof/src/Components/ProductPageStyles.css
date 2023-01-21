@@ -26,14 +26,22 @@
 }
 .flextext {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
+  justify-content: space-around;
   text-align: left;
   line-height: auto;
 }
+
+
+.flextext div:first-child{
+  width: 60%;
+}
 .flextext div:nth-child(2) {
+  width: 40%;
   font-size: 25px;
   margin-top: 15px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .Card div img {
