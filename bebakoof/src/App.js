@@ -2,7 +2,7 @@ import './App.css';
 
 import Navbar from './Components/Navbar';
 import Allroutes from './Components/Allroutes';
-
+import {CartPage} from "./Pages/CartPage"
 
 
 function App() {
@@ -10,8 +10,9 @@ function App() {
   return (
     <div className="App">
       
-      <Navbar/>
-      <Allroutes/>
+      {/* <Navbar/>
+      <Allroutes/> */}
+      <CartPage />
 
     </div>
   );
