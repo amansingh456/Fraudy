@@ -1,0 +1,93 @@
+
+.dropdown{
+    display: none;
+}
+
+.dropdown::-webkit-scrollbar{
+    display: none;
+}
+
+.dropdown:hover{
+    display: block;
+}
+
+.dropdown1:hover .dropdown{
+    display: block;
+}
+
+
+.stack1 a :hover {
+text-decoration: underline;
+cursor: pointer;
+color: red ;
+transform: scale(1.2); 
+
+}
+
+.dropdown3{
+    display: none;
+}
+
+.dropdown2:hover .dropdown3{
+    display: block;
+}
+
+
+.dropdown3::-webkit-scrollbar{
+    display: none;
+}
+
+.dropdown5{
+    display: none;
+}
+
+
+.dropdown4:hover .dropdown5{
+    display: block;
+}
+
+
+
+.dropdown5::-webkit-scrollbar{
+    display: none;
+}
+
+
+/* signup */
+.signup{
+    height:500px,;
+    margin-top: 10px;
+}
+
+
+.signupbox:hover{
+    cursor: pointer;
+}
+
+.signupbox:hover .signup {
+    display: block;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   z-index: 100;
+  
+}
+.signupbox:hover .signup .Text{
+    padding: 5px ;
+    padding-left: 2px;
+  
+}
+
+
+.Text:hover{
+    background-color: black;
+    color: white ;
+    transform: scale(1.2); 
+}
+
+.main:hover{
+
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    text-decoration-color: goldenrod;
+  
+    
+}

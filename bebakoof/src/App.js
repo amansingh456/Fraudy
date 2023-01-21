@@ -3,6 +3,8 @@ import HomePage from './Pages/HomePage';
 import ProductPage from './Components/ProductPage';
 import Payment from './Pages/Payment';
 import Success from './Pages/Success';
+import Navbar from './Components/Navbar';
+import Allroutes from './Components/Allroutes';
 
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
       {/* <Success/> */}
       {/* <ProductPage/> */}
       {/* <Sidebar/> */}
+      <Navbar/>
+      <Allroutes/>
     </div>
   );
 }
