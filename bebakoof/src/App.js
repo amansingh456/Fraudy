@@ -5,8 +5,8 @@ import WomensPage from "./Components/WomensPage";
 function App() {
   return (
     <div className="App">
-      {/* <ProductPage /> */}
-      <WomensPage/>
+      <ProductPage />
+      {/* <WomensPage/> */}
     </div>
   );
 }
