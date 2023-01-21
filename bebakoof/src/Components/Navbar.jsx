@@ -1,4 +1,8 @@
-import { Box, Flex, Heading , Image , Text , Spacer ,Input, VStack ,} from '@chakra-ui/react'
+import { Box, Flex, Heading , Image , Text , Spacer ,Input, VStack , Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+Button} from '@chakra-ui/react'
 import React from 'react'
 import { Link } from "react-router-dom"
 import "../Styles/Navbar.css"
@@ -32,7 +36,7 @@ const Navbar = () => {
 
   return (
 
-    <Box width="100%" border="1px solid black" >
+    <Box width="100%"  >
         <Box bg="gray.200"> 
         <Flex  display= {["none","none","none","flex"]} position="relative" width="80%" p={2}  height="20px" margin="auto" alignItems="center" >
       
@@ -45,7 +49,30 @@ const Navbar = () => {
          <a href="https://www.bewakoof.com/tribe" ><Text fontSize={12} px={4}>Track Order</Text></a>
         </Flex> </Box>
         <Box bg="gray.50" >
-        <Flex width={[ "90%","90%", "80%","80%"]} px={2}   border="1px solid black" margin="auto" alignItems="center" > <Flex  display={["flex","flex","flex","none"]}>  <GiHamburgerMenu size={30}  /></Flex>  <Box display={["none","none","none","block"]} width="150px"  height="60px" mr={10} >   <Link to="/" >  <Image width="150px" height="54px" src={fraudy} alt="shopname" /> </Link></Box> <Box px={2} display={["block","block","block","none"]}> <Link><Image  width="70%"  src={logo} />   </Link>  </Box> <Flex display={["none","none","none","flex"]}> <VStack   className='dropdown1'  ><Link> <Text className='main'  py={4} fontWeight="semibold" fontSize={"md"}   px={2} >MEN</Text>  </Link>
+        <Flex width={[ "90%","90%", "80%","80%"]} px={2}   margin="auto" alignItems="center" > <Flex  display={["flex","flex","flex","none"]}>
+            
+        <Menu position="absolute"  top={0}   >
+  <MenuButton as={Button} rightIcon={<GiHamburgerMenu size={20} />}>
+ 
+  </MenuButton>
+  <MenuList width={["200px" , "270px","270px","270px"]}   >
+    <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }} >  <Flex > 
+          {auth?<Heading fontSize={"md"} >Hello {names}</Heading>: <VStack>  <Link to="/Signup" > <Heading fontSize={"md"}  >Welcome Guest</Heading></Link> <Link to="/Signup" ><Text >Login/Signup</Text></Link> </VStack>  }  </Flex></MenuItem>
+    <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }} > <Link><Text>Men</Text></Link></MenuItem>
+    <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }} ><Link><Text>Women</Text></Link></MenuItem>
+    <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }} >   <Link><Text>Accessories</Text></Link></MenuItem>
+    <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }}> <Link> <Flex p={2}   alignItems="center"  ><Text mr={5} >Mad in India Sale</Text> <Image width="20%" src="https://images.bewakoof.com/nav_menu/mad-india-circle-icon-1673616489.png" /> </Flex> </Link></MenuItem>
+    <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }}> <Link> <Flex p={2}   alignItems="center"  ><Text mr={5} >WinterWear Store</Text> <Image width="20%" src="https://images.bewakoof.com/nav_menu/Circle-icon-dotw-1669102812.png" /> </Flex> </Link></MenuItem>
+    <MenuItem  _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }}> <Link> <Flex p={2}   alignItems="center"  ><Text mr={5} >Designs of the week</Text> <Image width="20%" src="https://images.bewakoof.com/nav_menu/Circle-Icon-1664893858.png" /> </Flex> </Link></MenuItem>
+    <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }}> <Link> <Flex p={2}   alignItems="center"  ><Text mr={5} >Specials</Text> <Image width="20%" src="https://images.bewakoof.com/nav_menu/Circle-icon-dotw-1669102812.png" /> </Flex> </Link></MenuItem>
+    <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }}>  {auth?<Link><Text onClick={logout} >Logout</Text></Link>:""}</MenuItem>
+  </MenuList>
+  
+</Menu>  
+              
+              
+              
+              </Flex>  <Box display={["none","none","none","block"]} width="150px"  height="60px" mr={10} >   <Link to="/" >  <Image width="150px" height="54px" src={fraudy} alt="shopname" /> </Link  ></Box> <Box px={2} display={["block","block","block","none"]}> <Link to="/"><Image  width="70%"  src={logo} />   </Link>  </Box> <Flex display={["none","none","none","flex"]}> <VStack   className='dropdown1'  ><Link> <Text className='main'  py={4} fontWeight="semibold" fontSize={"md"}   px={2} >MEN</Text>  </Link>
        
 <Box className='dropdown'   position="absolute" width="80%" height="500px" overflow="scroll"   backgroundColor="white"  left={155} zIndex={5}  top={65} >
     <Flex width="90%" justifyContent="space-between" >
@@ -325,7 +352,7 @@ const Navbar = () => {
     </VStack >
     </Flex>
 </Box>
-            </VStack> </Flex>  <Spacer/> <Input  display={["none","none","none","block"]} placeholder='search by product , category or collection' width={300} />  {auth? <Box py={2} className="signupbox"  position="relative" display={["none","none","none","block"]} px={2} > <VscAccount size={25} /><VStack className='signup' display="none" ml={-20}  backgroundColor="white" width="200px"   position="absolute" >
+            </VStack> </Flex>  <Spacer/> <Input border="1px solid black" display={["none","none","none","block"]} placeholder='search by product , category or collection' width={300} />  {auth? <Box py={2} className="signupbox"  position="relative" display={["none","none","none","block"]} px={2} > <VscAccount size={25} /><VStack className='signup' display="none" ml={-20}  backgroundColor="white" width="200px"   position="absolute" >
             <Link><Text  className='Text' >{names}</Text></Link>
             <Link><Text className='Text' >My Wishlist</Text></Link>
             <Link><Text className='Text' >My Bag</Text></Link>

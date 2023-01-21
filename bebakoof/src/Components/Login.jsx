@@ -43,18 +43,18 @@ const Login = () => {
      
 
   return (
-    <Box  bg="yellow.100" height="620px" >
+    <Box  bg="yellow.100" height={["500px" , "600px" , "700px" ,  "650px"]} >
 
-    <Box bg="white" width="80%"  height="600px"  mx="auto" >
+    <Box bg="white" width="80%"  height={["400px" , "500px" , "600px" ,  "600px"]}  mx="auto"  >
 
- <Box pt={20} width="30%" px={2} py={5}     height="500px" margin="auto"  >
+ <Box pt={20} width={[ "70%", "60%" , "40%","50%"]} px={2} py={5}     height={[ "300px" ,  "300px" ,  "450px", "500px"]} margin="auto"  >
    
-   <Heading size="lg" pt={10} >Log in to your account</Heading>
-  <FormLabel mt={10} >Email</FormLabel>
-  <Input border="1px solid black" defaultValue={email} onChange={(e)=>Setemail(e.target.value)} /> 
-  <FormLabel mt={5} >Password</FormLabel>
+   <Heading size={["sm","md","md","lg"]} pt={10} >Log in to your account</Heading>
+  <FormLabel mt={[5,10,10,10]} >Email</FormLabel>
+  <Input  border="1px solid black" defaultValue={email} onChange={(e)=>Setemail(e.target.value)} /> 
+  <FormLabel mt={[2,5,5,5]} >Password</FormLabel>
   <Input border="1px solid black"  onChange={(e)=>Setpass(e.target.value)} /> 
-<Button width="100%" bgColor="red" display="block" margin="auto" mt={10} onClick={()=>submit()} >Login</Button>
+<Button width="100%" bgColor="red" display="block" margin="auto" mt={[5,5,10,10]} onClick={()=>submit()} >Login</Button>
  </Box>
 
     </Box>
