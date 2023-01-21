@@ -7,10 +7,12 @@ import { AiOutlineHeart } from "react-icons/ai";
 import "./ProductPageStyles.css";
 import Sidebar from "./Sidebar";
 const ProductPage = () => {
-  const products = useSelector((store) => store.products);
+  const products = useSelector((store) => store.reducer.products);
   const dispatch = useDispatch();
   const location = useLocation();
   const [searchParams] = useSearchParams();
+
+   console.log(products)
 
   useEffect(() => {
     if (location || products.length === 0) {

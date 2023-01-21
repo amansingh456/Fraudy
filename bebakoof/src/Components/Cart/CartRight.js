@@ -10,7 +10,10 @@ export const CartRight = () => {
      cart.map((el)=>{
         MRP+=el.oldprice;
         totalPrice+=el.price
+        
       })
+
+
       let Charges = MRP-totalPrice
      //console.log(MRP)
     return (

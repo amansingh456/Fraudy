@@ -34,7 +34,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar-container">
       <p className="heading">
-        Men Clothing <span>( {products.length} )</span>
+        {/* Men Clothing <span>( {products.length} )</span> */}
        
       </p>
       <hr />
