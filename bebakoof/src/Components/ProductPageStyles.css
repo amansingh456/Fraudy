@@ -4,7 +4,6 @@
   display: flex;
   width: 100%;
   background: linear-gradient(to right, #6ff7e8, #0f68a9);
-  border: 1px solid blue;
   flex-wrap: wrap;
   overflow-wrap: break-word;
   overflow: hidden;
