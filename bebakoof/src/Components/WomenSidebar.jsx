@@ -33,10 +33,11 @@ const WomenSidebar = () => {
   const products = useSelector((store) => store.products);
   return (
     <div className="sidebar-container">
-      <p className="heading">
-        <u> Women Clothing</u><span>( {products.length} )</span>
-      </p>
-      <div className="inside-container">
+      <h2 className="heading">
+          Women Clothing  <span>({products.length})</span>
+          <hr />
+        </h2>
+      <div>
         <div>
           <h4>FILTERS</h4>
           <div>
@@ -116,3 +117,5 @@ const WomenSidebar = () => {
 };
 
 export default WomenSidebar;
+
+

@@ -1,5 +1,5 @@
 .sidebar-container {
-  width: 320px;
+  width: 300px;
   flex-wrap: wrap;
   position: fixed;
   height: 100vh;
@@ -12,6 +12,10 @@
   line-height: 22px;
   width: 350px;
   color: #0f68a9;
+}
+.heading hr {
+  width: 50% ;
+  border: 1px solid  yellow;
 }
 .heading span {
   color: #34073d;
@@ -42,7 +46,7 @@
     margin-left: 15px;
   }
   .sidebar-container {
-    width: 150px;
+    width: 200px;
     flex-wrap: wrap;
   }
   .heading {
@@ -54,8 +58,8 @@
     padding: 5px;
     margin-left: 25px;
   }
-  .inside-container h4:nth-child(1) {
-    width: 150px;
-    margin-left: -1px;
+  .popular select {
+    width: 100px;
+    padding: 6px;
   }
 }

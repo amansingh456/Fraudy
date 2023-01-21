@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
-import { addToCart, addToWishlist, getWomens} from "../Redux/action";
+import {  addToCart, addToWishlist, getWomens } from "../Redux/action";
 import { AiOutlineHeart } from "react-icons/ai";
-import {BsFillCartPlusFill} from "react-icons/bs"
+import { BsFillCartPlusFill } from "react-icons/bs";
 import "./ProductPageStyles.css";
 import WomenSidebar from "./WomenSidebar";
 
@@ -38,7 +38,9 @@ const WomensPage = () => {
         return el;
       }
     });
+
     window.alert("added to wishlist")
+
     dispatch(addToWishlist(FilterData[0]));
   };
   const handleCart = (id) => {
@@ -59,10 +61,7 @@ const WomensPage = () => {
           products.map((el) => {
             return (
               <div key={el.id}>
-                <img
-                  src={el.image}
-                  alt="prod_img"
-                />
+                <img src={el.image} alt="prod_img" />
                 <div className="flextext">
                   <div>
                     <h4>{el.Brand}</h4>
@@ -71,8 +70,9 @@ const WomensPage = () => {
                       <span>₹{el.price}</span> <del>₹{el.oldprice}</del>
                     </p>
                   </div>
+
                   <div className="icon">
-                    <BsFillCartPlusFill   onClick={() => handleCart(el.id)}  />
+                    <BsFillCartPlusFill onClick={() => handleCart(el.id)} />
                     <AiOutlineHeart onClick={() => handleClick(el.id)} />
                   </div>
                 </div>
