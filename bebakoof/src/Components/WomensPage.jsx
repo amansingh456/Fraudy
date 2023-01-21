@@ -2,15 +2,20 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
-import { addToCart, addToWishlist, getProducts, moveToCart, moveToWishlist } from "../Redux/action";
+import { getWomens, moveToCart, moveToWishlist } from "../Redux/action";
 import { AiOutlineHeart } from "react-icons/ai";
 import "./ProductPageStyles.css";
-import Sidebar from "./Sidebar";
-const ProductPage = () => {
+import WomenSidebar from "./WomenSidebar";
+
+const WomensPage = () => {
   const products = useSelector((store) => store.products);
   const dispatch = useDispatch();
   const location = useLocation();
   const [searchParams] = useSearchParams();
+  const wishlist = useSelector((store) => store.wishlist);
+  console.log("wishlist", wishlist);
+  const carts = useSelector((store) => store.cart);
+  console.log("carts", carts);
 
   useEffect(() => {
     if (location || products.length === 0) {
@@ -22,7 +27,7 @@ const ProductPage = () => {
           _order: sortBy,
         },
       };
-      dispatch(getProducts(getProductsParams));
+      dispatch(getWomens(getProductsParams));
     }
   }, [location.search, dispatch, products.length, searchParams, location]);
 
@@ -32,7 +37,7 @@ const ProductPage = () => {
         return el;
       }
     });
-    dispatch(addToWishlist(FilterData[0]));
+    dispatch(moveToWishlist(FilterData[0]));
   };
   const handleCart = (id) => {
     let Fill = products.filter((el) => {
@@ -40,13 +45,12 @@ const ProductPage = () => {
         return el;
       }
     });
-    window.alert("added successful")
-    dispatch(addToCart(Fill[0]));
+    dispatch(moveToCart(Fill[0]));
   };
 
   return (
     <div className="main">
-      <Sidebar />
+      <WomenSidebar />
       <div className="Card">
         {products.length > 0 &&
           products.map((el) => {
@@ -77,4 +81,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default WomensPage;

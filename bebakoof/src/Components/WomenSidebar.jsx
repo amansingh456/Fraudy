@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import "./SidebarStyles.css";
-const Sidebar = () => {
+const WomenSidebar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = searchParams.getAll("category");
   const initialSort = searchParams.getAll("sort");
@@ -34,10 +34,10 @@ const Sidebar = () => {
   return (
     <div className="sidebar-container">
       <p className="heading">
-        Men Clothing <span>( {products.length} )</span>
-       
+        Women Clothing <span>( {products.length} )</span>
+        <hr />
       </p>
-      <hr />
+
       <div className="inside-container">
         <div>
           <h4>FILTERS</h4>
@@ -64,26 +64,32 @@ const Sidebar = () => {
             <div>
               <input
                 type="checkbox"
-                value="jeans"
+                value="jumpsuit"
                 onChange={handleChange}
-                checked={category.includes("jeans")}
+                checked={category.includes("jumpsuit")}
               />
-              <label>jeans</label>
+              <label>jumpsuit</label>
             </div>
             <div>
               <input
                 type="checkbox"
-                value="kurta"
+                value="hoodies"
                 onChange={handleChange}
-                checked={category.includes("kurta")}
+                checked={category.includes("hoodies")}
               />
-              <label>kurta</label>
+              <label>hoodies</label>
             </div>
           </div>
         </div>
         <h4>SORT</h4>
-        <div onChange={handleSort}>
-          <input
+        <div onChange={handleSort} className="popular">
+          <select name="sortBy">
+            <option value="">Popular</option>
+            <option value="asc">Low-to-High</option>
+            <option value="desc">High-to-Low</option>
+          </select>
+
+          {/* <input
             type="radio"
             value="asc"
             name="sortBy"
@@ -98,18 +104,17 @@ const Sidebar = () => {
             defaultChecked={sort === "desc"}
           />
           <label>High-to-Low</label>
-          <br />
           <input
             type="radio"
             value=""
             name="sortBy"
             defaultChecked={sort === ""}
           />
-          <label>Popular</label>
+          <label>Default</label> */}
         </div>
       </div>
     </div>
   );
 };
 
-export default Sidebar;
+export default WomenSidebar;
