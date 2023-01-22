@@ -35,14 +35,12 @@ const Sidebar = () => {
     <div className="sidebar-container">
       <p className="heading">
         Men Clothing <span>( {products.length} )</span>
-       
-      </p>
       <hr />
+      </p>
       <div className="inside-container">
         <div>
           <h4>Filter By Categories </h4>
           <div>
-           
             <div>
               <input
                 type="checkbox"

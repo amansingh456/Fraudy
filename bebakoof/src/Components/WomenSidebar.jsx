@@ -37,7 +37,6 @@ const WomenSidebar = () => {
         Women Clothing <span>( {products.length} )</span>
         <hr />
       </p>
-
       <div className="inside-container">
         <div>
           <h4>FILTERS</h4>

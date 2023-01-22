@@ -13,9 +13,9 @@ const WomensPage = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const wishlist = useSelector((store) => store.wishlist);
-  console.log("wishlist", wishlist);
+  // console.log("wishlist", wishlist);
   const carts = useSelector((store) => store.cart);
-  console.log("carts", carts);
+  // console.log("carts", carts);
 
   useEffect(() => {
     if (location || products.length === 0) {
