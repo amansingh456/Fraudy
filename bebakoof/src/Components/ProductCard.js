@@ -36,7 +36,7 @@ export const ProductCard = () => {
        // console.log('ghh')
        if(!isLoading)
         dispatch(getToCart())
-    },[ ])
+    },[isLoading])
 
     // useEffect(()=>{
     //     let quantity = cart.map((el)=>{

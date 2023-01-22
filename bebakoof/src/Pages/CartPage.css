@@ -1,11 +1,13 @@
 
 
 .cartPage{
+    width:"100%";
+    margin:"auto";
     border:"1px solid red";
     display:grid;
     grid-template-columns: repeat(2,1fr);
     justify-content: space-between;
-    gap: 50px;
+    gap: 100px;
     padding:0px 10% 0px 10%;
  
 }
@@ -37,9 +39,11 @@
 }
 @media screen and (max-width:777px){
     .cartPage{
+       /* border: 1px solid red; */
         grid-template-columns: repeat(1,1fr);
         text-align: center;
         padding:0 10% 0 10%;
+        margin-bottom:50px;
      }
      /* .wishlist{
         display:grid;

@@ -16,7 +16,7 @@ export const CartRight = () => {
       let Charges = MRP-totalPrice
      //console.log(MRP)
     return (
-        <Box  className="CartRight">
+        <Box  className="CartRight" w="100%">
         
             <Center>
                 <Box>
@@ -34,7 +34,7 @@ export const CartRight = () => {
                         Have a Coupon / Referral / Gift Card ?   <span style={{marginLeft:"80px",color:"teal"}} >Redeem <ArrowRightIcon  /></span> 
                     </Button>
                    
-                    <Box w="500px" mt="10px" border="1px solid rgb(234, 234, 234)">
+                    <Box w="500px" mt="10px" border="1px solid rgb(234, 234, 234)"  mb="200px" >
                         <Heading  fontSize="15px" ml="-220px">PRICE SUMMARY</Heading>
                         <Box p="0px 8px 0px 8px">
                             <Box display="flex" justifyContent="space-between">
@@ -58,7 +58,7 @@ export const CartRight = () => {
                             </Box>
                             
                         </Box>
-                        <Box p="20px" border="0.5px solid rgb(234, 234, 234)" textAlign="center" borderRadius="3px" display="flex" gap="120px" >
+                        <Box p="20px" border="0.5px solid rgb(234, 234, 234)" textAlign="center" borderRadius="3px" display="flex" gap="120px">
                                 <Box fontSize="15px" display="block">
                                     <Box> <Text as ="b">TOTAL</Text></Box>
                                    
@@ -66,7 +66,7 @@ export const CartRight = () => {
                                     
                                 </Box>
                                
-                                <Button w="340px" fontSize={"18px"} h="60px" border="none" bg="rgb(66, 162, 162)" borderRadius="5px">
+                                <Button w="340px" fontSize={"18px"} h="60px"  border="none" bg="rgb(66, 162, 162)" borderRadius="5px">
                                     <Link href="/payment" textDecoration={"none"}  color="white"> CHECK OUT </Link>
                                 </Button>
                               
