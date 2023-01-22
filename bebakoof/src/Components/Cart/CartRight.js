@@ -4,12 +4,14 @@ import { useSelector } from "react-redux";
 
 
 export const CartRight = () => {
-   const cart = useSelector((store)=>store.cart)
+   const cart = useSelector((store)=>store.DataReducer.cart)
       let MRP=0;
       let totalPrice=0;
      cart.map((el)=>{
         MRP+=el.oldprice;
         totalPrice+=el.price
+        // console.log(totalPrice,"tp")
+        localStorage.setItem("tp", totalPrice)
       })
       let Charges = MRP-totalPrice
      //console.log(MRP)
@@ -65,7 +67,7 @@ export const CartRight = () => {
                                 </Box>
                                
                                 <Button w="340px" fontSize={"18px"} h="60px" border="none" bg="rgb(66, 162, 162)" borderRadius="5px">
-                                    <Link href="" textDecoration={"none"}  color="white"> CHECK OUT </Link>
+                                    <Link href="/payment" textDecoration={"none"}  color="white"> CHECK OUT </Link>
                                 </Button>
                               
                         </Box>
@@ -73,8 +75,6 @@ export const CartRight = () => {
                 </Box>  
                 
             </Center>
-            
-
             
         </Box> 
     )

@@ -30,7 +30,7 @@ const Sidebar = () => {
     sort && (params.sort = sort);
     setSearchParams(params);
   }, [category, setSearchParams, sort]);
-  const products = useSelector((store) => store.products);
+  const products = useSelector((store) => store.DataReducer.products);
   return (
     <div className="sidebar-container">
       <p className="heading">
@@ -40,9 +40,9 @@ const Sidebar = () => {
       <hr />
       <div className="inside-container">
         <div>
-          <h4>FILTERS</h4>
+          <h4>Filter By Categories </h4>
           <div>
-            <p>Category</p>
+           
             <div>
               <input
                 type="checkbox"
@@ -50,7 +50,7 @@ const Sidebar = () => {
                 onChange={handleChange}
                 checked={category.includes("shirt")}
               />
-              <label>shirt</label>
+              <label>Shirt</label>
             </div>
             <div>
               <input
@@ -59,7 +59,7 @@ const Sidebar = () => {
                 onChange={handleChange}
                 checked={category.includes("t-shirt")}
               />
-              <label>t-shirt</label>
+              <label>T-shirt</label>
             </div>
             <div>
               <input
@@ -68,7 +68,7 @@ const Sidebar = () => {
                 onChange={handleChange}
                 checked={category.includes("jeans")}
               />
-              <label>jeans</label>
+              <label>Jeans</label>
             </div>
             <div>
               <input
@@ -77,11 +77,11 @@ const Sidebar = () => {
                 onChange={handleChange}
                 checked={category.includes("kurta")}
               />
-              <label>kurta</label>
+              <label>Kurta</label>
             </div>
           </div>
         </div>
-        <h4>SORT</h4>
+        <h4 style={{marginTop:"40px", marginBottom:"20px", textDecoration:"underline"}}>SORT</h4>
         <div onChange={handleSort}>
           <input
             type="radio"

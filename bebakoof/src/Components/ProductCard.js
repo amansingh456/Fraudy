@@ -7,9 +7,9 @@ import { MayLikeCard } from "./MayLikeCard"
 
 //import { Button } from "./Cart/CartElements"
 export const ProductCard = () => {
-    const isLoading = useSelector((store)=>store.isLoading)
+    const isLoading = useSelector((store)=>store.DataReducer.isLoading)
     const dispatch = useDispatch()
-    const cart = useSelector((store) => store.cart)
+    const cart = useSelector((store) => store.DataReducer.cart)
    // const [qty, setQty] = useState(null)
 
     
@@ -36,7 +36,7 @@ export const ProductCard = () => {
        // console.log('ghh')
        if(!isLoading)
         dispatch(getToCart())
-    },[isLoading])
+    },[ ])
 
     // useEffect(()=>{
     //     let quantity = cart.map((el)=>{

@@ -5,6 +5,7 @@
     display:grid;
     grid-template-columns: repeat(2,1fr);
     justify-content: space-between;
+    gap: 50px;
     padding:0px 10% 0px 10%;
  
 }
@@ -20,7 +21,7 @@
     }
     .CartRight{
         width: 40%;
-        margin-right: 5%;
+        /* margin-right: 5%; */
         padding-right: 5%;
     }
     /* .wishlist{

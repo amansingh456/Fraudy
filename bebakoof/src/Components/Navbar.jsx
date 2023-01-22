@@ -8,9 +8,9 @@ import { Link } from "react-router-dom"
 import "../Styles/Navbar.css"
 import { CiHeart} from "react-icons/ci";
 import { BsBag } from "react-icons/bs";
-import fraudy from "../images/fraudyReal.png"
+import fraudy from "../Images/fraudyReal.png"
 import { GiHamburgerMenu } from "react-icons/gi";
-import logo from "../images/logo.png" 
+import logo from "../Images/logo.png" 
 import { useDispatch, useSelector } from 'react-redux';
 import { VscAccount } from "react-icons/vsc";
 import { LogoutFunctionSuccess } from '../AuthReducer/action';
@@ -75,7 +75,7 @@ const Navbar = () => {
               
               
               
-              </Flex>  <Box display={["none","none","none","block"]} width="150px"  height="60px" mr={10} >   <Link to="/" >  <Image width="150px" height="54px" src={fraudy} alt="shopname" /> </Link  ></Box> <Box px={2} display={["block","block","block","none"]}> <Link to="/"><Image  width="70%"  src={logo} />   </Link>  </Box> <Flex display={["none","none","none","flex"]}> <VStack   className='dropdown1'  ><Link> <Text className='main'  py={4} fontWeight="semibold" fontSize={"md"}   px={2} >MEN</Text>  </Link>
+              </Flex>  <Box display={["none","none","none","block"]} width="150px"  height="60px" mr={10} >   <Link to="/" >  <Image width="150px" height="54px" src={fraudy} alt="shopname" /> </Link  ></Box> <Box px={2} display={["block","block","block","none"]}> <Link to="/"><Image  width="70%"  src={logo} />   </Link>  </Box> <Flex display={["none","none","none","flex"]}> <VStack   className='dropdown1'  ><Link to="/Mens"> <Text className='mains'  py={4}  fontSize={"md"}   px={2} >MEN</Text>  </Link>
        
 <Box className='dropdown'   position="absolute" width="80%" height="500px" overflow="scroll"   backgroundColor="white"  left={155} zIndex={5}  top={65} >
     <Flex width="90%" justifyContent="space-between" >
@@ -174,7 +174,7 @@ const Navbar = () => {
      </VStack>
 
      <VStack className='dropdown2'  > 
-           <Link> <Text  py={4} fontWeight="semibold" fontSize={"md"} className='main'  px={2}>WOMEN</Text> </Link>
+           <Link to="/Women"> <Text  py={4}  fontSize={"md"} className='mains'  px={2}>WOMEN</Text> </Link>
            
            <Box className='dropdown3' position="absolute" width="80%" height="500px" overflow="scroll" backgroundColor="white"  left={155} zIndex={5}  top={65} >
     <Flex width="90%" justifyContent="space-between" >
@@ -276,7 +276,7 @@ const Navbar = () => {
             </VStack>
             
             
-           <VStack className='dropdown4' >  <Link> <Text py={4} fontWeight="semibold" fontSize={"md"} className='main'  px={2}>MOBILE COVERS</Text> </Link>
+           <VStack className='dropdown4' >  <Link> <Text py={4}  fontSize={"md"} className='mains'  px={2}>MOBILE COVERS</Text> </Link>
            <Box className='dropdown5' position="absolute" width="80%" height="350px" overflow="hidden" backgroundColor="white"  left={155} zIndex={5}  top={65} >
     <Flex width="90%" justifyContent="space-between" >
    <Box width="50%"  >
@@ -361,18 +361,18 @@ const Navbar = () => {
             <Link><Text className='Text' >My Bag</Text></Link>
             <Link><Text className='Text' >My account</Text></Link>
             <Link><Text onClick={logout} className='Text' >Logout</Text></Link>
-                </VStack>  </Box>:<Link to="/Signup"  >  <Text  display={["none","none","none","block"]} px={2} >LOGIN</Text> </Link> } <Link>  <Box px={2}  > <CiHeart  size={30}  /></Box> </Link> <Link>   <Box px={2} > <BsBag size={30}  /></Box>  </Link> <Image px={2} height={10} borderRadius="50%" size={30} src="https://as1.ftcdn.net/v2/jpg/01/85/97/08/1000_F_185970884_vu3JsjQgKW0IE00WpRsNiMtfptfcPtDA.jpg" /> </Flex>
+                </VStack>  </Box>:<Link to="/Signup"  >  <Text  display={["none","none","none","block"]} px={2} >LOGIN</Text> </Link> } <Link>  <Box px={2}  > <CiHeart  size={30}  /></Box> </Link> <Link to="/cart">   <Box px={2} > <BsBag size={30}  /></Box>  </Link> <Image px={2} height={10} borderRadius="50%" size={30} src="https://as1.ftcdn.net/v2/jpg/01/85/97/08/1000_F_185970884_vu3JsjQgKW0IE00WpRsNiMtfptfcPtDA.jpg" /> </Flex>
 
              </Box>
     
     <Box bg="gray.50" > 
 
         <Flex display={["none","none","none","flex"]} width="60%" p={2}  height="50px"  margin="auto" alignItems="center" justifyContent="space-between" >
-        <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text fontWeight="semibold" px={4} >LIVE NOW!</Text></a>
-        <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text fontWeight="semibold" px={4} >MEN</Text></a>
-        <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text fontWeight="semibold" px={4} >WOMEN</Text></a>
-        <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text fontWeight="semibold" px={4} >ACCESSORIES</Text></a>
-        <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text fontWeight="semibold" px={4} >WINTERWEAR</Text></a>
+        <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text  px={4} >LIVE NOW!</Text></a>
+        <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text  px={4} >MEN</Text></a>
+        <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text  px={4} >WOMEN</Text></a>
+        <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text  px={4} >ACCESSORIES</Text></a>
+        <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text  px={4} >WINTERWEAR</Text></a>
         </Flex>
         </Box>
         

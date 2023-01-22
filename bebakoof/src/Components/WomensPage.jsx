@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
-import { getWomens, moveToCart, moveToWishlist } from "../Redux/action";
+import { getWomens, addToCart, addToWishlist } from "../Redux/action";
 import { AiOutlineHeart } from "react-icons/ai";
 import "./ProductPageStyles.css";
 import WomenSidebar from "./WomenSidebar";
 
 const WomensPage = () => {
-  const products = useSelector((store) => store.products);
+  const products = useSelector((store) => store.DataReducer.products);
   const dispatch = useDispatch();
   const location = useLocation();
   const [searchParams] = useSearchParams();
@@ -37,7 +37,7 @@ const WomensPage = () => {
         return el;
       }
     });
-    dispatch(moveToWishlist(FilterData[0]));
+    dispatch(addToWishlist(FilterData[0]));
   };
   const handleCart = (id) => {
     let Fill = products.filter((el) => {
@@ -45,7 +45,7 @@ const WomensPage = () => {
         return el;
       }
     });
-    dispatch(moveToCart(Fill[0]));
+    dispatch(addToCart(Fill[0]));
   };
 
   return (
