@@ -5,6 +5,8 @@ import styled from 'styled-components'
 
 const Payment = () => {
 
+    let tp = localStorage.getItem("tp")
+
     const [check, setCheck] = useState(false)
 
 
@@ -38,7 +40,7 @@ const Payment = () => {
                     </div>
                     <div>
                         <input type="checkbox" style={{marginRight:"20px"}} onChange={()=>setCheck(!check)}/>
-                        {!check ? (<div></div>):(<Button onClick={handleSuccess}>Pay Rs.</Button>)}
+                        {!check ? (<div></div>):(<Button onClick={handleSuccess}>Pay Rs.{tp}</Button>)}
                     </div>
                 </PaytmBox>
                 <PaytmBox>
@@ -71,6 +73,7 @@ const MainContainer = styled.div`
     margin: auto;
     display: flex;
     /* border: 1px solid black; */
+    margin-top: 20px;
 `
 const PaymentOption = styled.div`
     width: 60%;
@@ -141,5 +144,6 @@ const Heading = styled.p`
     text-align: left;
     font-family: "Poppins";
     margin-top: 0;
+    margin-bottom: 15px;
     padding-top: 0;
 `

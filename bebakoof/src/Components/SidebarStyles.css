@@ -1,17 +1,21 @@
 .sidebar-container {
-   width: 320px;
-   flex-wrap: wrap;
-   position: fixed;
-   height: 100vh;
-   background: linear-gradient(to , #6ff7e8,
-   #0f68a9);
+   width: 30%;
+   text-align: center;
+   /* margin-left: auto; */
+   /* margin-right: auto; */
+   /* flex-wrap: wrap; */
+   /* position: fixed; */
+   /* height: 100vh; */
+   /* background: linear-gradient(to , #6ff7e8,
+   #0f68a9); */
  }
  .heading {
    font-size: 25px;
    font-weight: bold;
    line-height: 22px;
-   width: 350px;
+   width: 250px;
    color: #0f68a9;
+   text-align: center;
  }
  .heading span {
    color: #34073d;
@@ -32,8 +36,11 @@
  }
  
  .inside-container h4:nth-child(1) {
-   width: 100px;
-   margin-left: 110px;
+   /* width: 100px; */
+   margin-top: 20px;
+   margin-bottom: 20px;
+   text-decoration: underline;
+   /* margin-left: 110px; */
  }
  
  .popular select {

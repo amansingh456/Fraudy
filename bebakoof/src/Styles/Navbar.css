@@ -83,7 +83,7 @@ transform: scale(1.2);
     transform: scale(1.2); 
 }
 
-.main:hover{
+.mains:hover{
 
     text-decoration: underline;
     text-decoration-thickness: 5px;

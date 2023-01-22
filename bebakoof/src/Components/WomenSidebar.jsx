@@ -30,7 +30,7 @@ const WomenSidebar = () => {
     sort && (params.sort = sort);
     setSearchParams(params);
   }, [category, setSearchParams, sort]);
-  const products = useSelector((store) => store.products);
+  const products = useSelector((store) => store.DataReducer.products);
   return (
     <div className="sidebar-container">
       <p className="heading">

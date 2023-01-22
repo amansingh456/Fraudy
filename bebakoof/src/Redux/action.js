@@ -153,7 +153,7 @@ export const getProducts = (params) => (dispatch) => {
   return axios
     .get(`https://user-data-d84k.onrender.com/products`, params)
     .then((res) => {
-      // console.log(res)
+      console.log(res)
       dispatch(getProductSuccess(res.data));
     })
     .catch((e) => {

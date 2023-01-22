@@ -2,9 +2,9 @@
 
 .main {
   display: flex;
-  width: 100%;
-  background: linear-gradient(to right, #6ff7e8,
-  #0f68a9);
+  width: 72%;
+  /* background: linear-gradient(to right, #6ff7e8,
+  #0f68a9); */
 }
 .Card {
   display: grid;

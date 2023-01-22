@@ -7,10 +7,14 @@ import { AiOutlineHeart } from "react-icons/ai";
 import "./ProductPageStyles.css";
 import Sidebar from "./Sidebar";
 const ProductPage = () => {
-  const products = useSelector((store) => store.products);
+  // const eee =  useSelector((store)=>store.DataReducer.isLoading)
+  const products = useSelector((store) => store.DataReducer.products);
   const dispatch = useDispatch();
   const location = useLocation();
   const [searchParams] = useSearchParams();
+
+  console.log(products)  
+  // console.log(eee)  
 
   useEffect(() => {
     if (location || products.length === 0) {
@@ -43,6 +47,8 @@ const ProductPage = () => {
     window.alert("added successful")
     dispatch(addToCart(Fill[0]));
   };
+
+
 
   return (
     <div className="main">
