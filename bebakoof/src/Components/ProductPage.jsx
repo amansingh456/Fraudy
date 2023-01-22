@@ -6,6 +6,7 @@ import { addToCart, addToWishlist, getProducts, moveToCart, moveToWishlist } fro
 import { AiOutlineHeart } from "react-icons/ai";
 import "./ProductPageStyles.css";
 import Sidebar from "./Sidebar";
+
 const ProductPage = () => {
   const products = useSelector((store) => store.reducer.products);
   const dispatch = useDispatch();
