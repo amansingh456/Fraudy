@@ -37,6 +37,7 @@ const WomensPage = () => {
         return el;
       }
     });
+    window.alert("Added to wishlist")
     dispatch(addToWishlist(FilterData[0]));
   };
   const handleCart = (id) => {
@@ -45,6 +46,7 @@ const WomensPage = () => {
         return el;
       }
     });
+    window.alert("Added to bag")
     dispatch(addToCart(Fill[0]));
   };
 
