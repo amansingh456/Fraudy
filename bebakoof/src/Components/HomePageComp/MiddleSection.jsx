@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import bgImg from "../../Images/ye.webp"
+import bgImg from "../../images/ye.webp"
 
 
 
