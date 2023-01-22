@@ -13,9 +13,9 @@ const WomensPage = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const wishlist = useSelector((store) => store.wishlist);
-  console.log("wishlist", wishlist);
+  // console.log("wishlist", wishlist);
   const carts = useSelector((store) => store.cart);
-  console.log("carts", carts);
+  // console.log("carts", carts);
 
   useEffect(() => {
     if (location || products.length === 0) {
@@ -37,6 +37,7 @@ const WomensPage = () => {
         return el;
       }
     });
+    window.alert("Added to wishlist")
     dispatch(addToWishlist(FilterData[0]));
   };
   const handleCart = (id) => {
@@ -45,6 +46,7 @@ const WomensPage = () => {
         return el;
       }
     });
+    window.alert("Added to bag")
     dispatch(addToCart(Fill[0]));
   };
 

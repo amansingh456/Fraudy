@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { auth, provider } from './firebase';
 import {FcGoogle } from "react-icons/fc";
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
 import { LoginFunctionSuccess } from '../AuthReducer/action';
 import * as yup from "yup"
 import { useFormik } from 'formik'
@@ -16,7 +16,7 @@ import swal from 'sweetalert';
 
 
 const Signup = () => {
-
+  
      const navigate = useNavigate()
     const dispatch = useDispatch()
     const[close,Setclose] = useState(false) //button disabled
@@ -32,9 +32,9 @@ const Signup = () => {
           password:"" ,
       } ,
       validationSchema: yup.object({
-         name : yup.string().required("name Required").min(6,"name is too Short") ,
-          email : yup.string().required("email Required").min(6," email  is too Short") ,
-          password : yup.string().required(" password Required").min(6," password is too Short")
+         name : yup.string().required("name Required").min(6,"your name is too Short") ,
+          email : yup.string().email().required("Please enter your email") ,
+          password : yup.string().required("Please enter password Required").min(6,"Your password is too Short")
       }),
       onSubmit :  (values,actions) =>{
         Setclose(true)
@@ -61,8 +61,8 @@ const Signup = () => {
 
 const googleSignin=()=>{
 
-  signInWithPopup(auth,provider).then((data)=> {console.log(data.user);dispatch(LoginFunctionSuccess({name:data.user.displayName,
-    email:data.user.email}));navigate("/")})
+  signInWithPopup(auth,provider).then((data)=> {console.log(data.user);dispatch(LoginFunctionSuccess({names:data.user.displayName,
+    emails:data.user.email}));navigate("/")})
 }
 
 

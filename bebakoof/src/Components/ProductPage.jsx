@@ -13,7 +13,7 @@ const ProductPage = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
 
-  console.log(products)  
+  // console.log(products)  
   // console.log(eee)  
 
   useEffect(() => {

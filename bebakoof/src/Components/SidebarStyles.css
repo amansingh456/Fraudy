@@ -1,3 +1,8 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
 .sidebar-container {
    width: 30%;
    text-align: center;
@@ -8,14 +13,14 @@
    /* height: 100vh; */
    /* background: linear-gradient(to , #6ff7e8,
    #0f68a9); */
+
  }
  .heading {
-   font-size: 25px;
+   font-size: 18px;
    font-weight: bold;
-   line-height: 22px;
-   width: 250px;
    color: #0f68a9;
-   text-align: center;
+   margin-top: 20px;
+   
  }
  .heading span {
    color: #34073d;
@@ -59,16 +64,22 @@
      flex-wrap: wrap;
    }
    .heading {
-     font-size: 18px;
+     font-size: 15px;
      font-weight: bold;
      line-height: 22px;
      text-align: start;
-     width: 120px;
+     width: 115px;
      padding: 5px;
      margin-left: 25px;
+     border: 1px solid transparent;
    }
    .inside-container h4:nth-child(1) {
      width: 150px;
      margin-left: -1px;
    }
+   .popular select {
+    width: 100px;
+    padding: 10px;
+  }
+  
  }

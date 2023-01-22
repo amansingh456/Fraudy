@@ -61,8 +61,8 @@ const Navbar = () => {
   <MenuList width={["200px" , "270px","270px","270px"]}   >
     <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }} >  <Flex > 
           {auth?<Heading fontSize={"md"} >Hello {names}</Heading>: <VStack>  <Link to="/Signup" > <Heading fontSize={"md"}  >Welcome Guest</Heading></Link> <Link to="/Signup" ><Text >Login/Signup</Text></Link> </VStack>  }  </Flex></MenuItem>
-    <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }} > <Link><Text>Men</Text></Link></MenuItem>
-    <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }} ><Link><Text>Women</Text></Link></MenuItem>
+    <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }} > <Link to="/Mens" ><Text>Men</Text></Link></MenuItem>
+    <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }} ><Link to="/Women"><Text>Women</Text></Link></MenuItem>
     <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }} >   <Link><Text>Accessories</Text></Link></MenuItem>
     <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }}> <Link> <Flex p={2}   alignItems="center"  ><Text mr={5} >Mad in India Sale</Text> <Image width="20%" src="https://images.bewakoof.com/nav_menu/mad-india-circle-icon-1673616489.png" /> </Flex> </Link></MenuItem>
     <MenuItem _hover={{ bg: 'gray.400',color:"white" ,transform:"scale(1.2)" }}> <Link> <Flex p={2}   alignItems="center"  ><Text mr={5} >WinterWear Store</Text> <Image width="20%" src="https://images.bewakoof.com/nav_menu/Circle-icon-dotw-1669102812.png" /> </Flex> </Link></MenuItem>
@@ -360,7 +360,7 @@ const Navbar = () => {
             </VStack> </Flex>  <Spacer/> <Input border="1px solid black" display={["none","none","none","block"]} placeholder='search by product , category or collection' width={300} />  {auth? <Box py={2} className="signupbox"  position="relative" display={["none","none","none","block"]} px={2} > <VscAccount size={25} /><VStack className='signup' display="none" ml={-20}  backgroundColor="white" width="200px"   position="absolute" >
             <Link><Text  className='Text' >{names}</Text></Link>
             <Link><Text className='Text' >My Wishlist</Text></Link>
-            <Link><Text className='Text' >My Bag</Text></Link>
+            <Link to="/cart" ><Text className='Text' >My Bag</Text></Link>
             <Link><Text className='Text' >My account</Text></Link>
             <Link><Text onClick={logout} className='Text' >Logout</Text></Link>
                 </VStack>  </Box>:<Link to="/Signup"  >  <Text  display={["none","none","none","block"]} px={2} >LOGIN</Text> </Link> }
@@ -374,8 +374,8 @@ const Navbar = () => {
 
         <Flex display={["none","none","none","flex"]} width="60%" p={2}  height="50px"  margin="auto" alignItems="center" justifyContent="space-between" >
         <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text  px={4} >LIVE NOW!</Text></a>
-        <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text  px={4} >MEN</Text></a>
-        <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text  px={4} >WOMEN</Text></a>
+        <a href="/Mens" ><Text  px={4} >MEN</Text></a>
+        <a href="/Women" ><Text  px={4} >WOMEN</Text></a>
         <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text  px={4} >ACCESSORIES</Text></a>
         <a href="https://www.bewakoof.com/campaign/delights-coupons-discounts-offers-sale" ><Text  px={4} >WINTERWEAR</Text></a>
         </Flex>

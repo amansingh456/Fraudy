@@ -2,7 +2,7 @@ import { Box, Button, FormControl, FormErrorMessage, FormLabel, Heading, Input, 
 import React, { useEffect, useState } from 'react'
 import { signInWithEmailAndPassword , updateProfile } from 'firebase/auth';
 import { auth } from './firebase';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import * as yup from "yup"
 import { useFormik } from 'formik'
@@ -30,12 +30,12 @@ const Login = () => {
           password:"" ,
       } ,
       validationSchema: yup.object({
-          email : yup.string().required("email Required").min(6,"email is too Short") ,
+        email : yup.string().email().required("Please enter your email") ,
           password : yup.string().required(" password Required").min(6," password is too Short")
       }),
       onSubmit :  (values,actions) =>{
         
-          signInWithEmailAndPassword(auth,values.email,values.password).then(res=>{console.log(res);navigate("/");swal("Login Success", "Happy Shopping", "success")} )
+          signInWithEmailAndPassword(auth,values.email,values.password).then(res=>{console.log(res);navigate("/") ;swal("Login Success", "Happy Shopping", "success")} )
           .catch(err=>console.log(err))
           actions.resetForm()
       }
