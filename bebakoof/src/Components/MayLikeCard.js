@@ -6,9 +6,9 @@ import { addToCart, deleteToWishlist, getToWishlist, moveToCart, removeToWishlis
 import { EmptyWishlist } from "./EmptyWishlist"
 import { Wrapper,Button,P1,P2,P3,Img,Parent,Grand } from "./MaylikeCardElement"
 export const MayLikeCard =  () => {
-    const isLoading = useSelector((store)=>store.isLoading)
+    const isLoading = useSelector((store)=>store.DataReducer.isLoading)
    const dispatch= useDispatch();
-    const wishlist= useSelector((store)=>store.wishlist)
+    const wishlist= useSelector((store)=>store.DataReducer.wishlist)
      console.log(wishlist,"wish")
     const handleRemove = (id) => {
        

@@ -24,6 +24,7 @@ background:transparent;
  border-radius:5px;
 `
 const Img = styled.img`
+margin:auto;
 width:200px;
 height:200px;
 margin-bottom:20px;

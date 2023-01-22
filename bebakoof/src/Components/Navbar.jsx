@@ -128,6 +128,7 @@ const Navbar = () => {
         <a> <Text>Plus Size Bottomwear</Text>  </a>
         <a> <Text>All bottomWear</Text>  </a>
     </VStack >
+    
     <VStack className='stack1'  >
        <a href="" >  <Heading  size="md"  >
             WinterWear
@@ -228,6 +229,7 @@ const Navbar = () => {
         <a> <Text>Plus Size Bottomwear</Text>  </a>
         <a> <Text>All bottomWear</Text>  </a>
     </VStack >
+   
     <VStack className='stack1'  >
        <a href="" >  <Heading  size="md"  >
             WinterWear
@@ -361,7 +363,10 @@ const Navbar = () => {
             <Link><Text className='Text' >My Bag</Text></Link>
             <Link><Text className='Text' >My account</Text></Link>
             <Link><Text onClick={logout} className='Text' >Logout</Text></Link>
-                </VStack>  </Box>:<Link to="/Signup"  >  <Text  display={["none","none","none","block"]} px={2} >LOGIN</Text> </Link> } <Link>  <Box px={2}  > <CiHeart  size={30}  /></Box> </Link> <Link to="/cart">   <Box px={2} > <BsBag size={30}  /></Box>  </Link> <Image px={2} height={10} borderRadius="50%" size={30} src="https://as1.ftcdn.net/v2/jpg/01/85/97/08/1000_F_185970884_vu3JsjQgKW0IE00WpRsNiMtfptfcPtDA.jpg" /> </Flex>
+                </VStack>  </Box>:<Link to="/Signup"  >  <Text  display={["none","none","none","block"]} px={2} >LOGIN</Text> </Link> }
+                 <Link to="/maylikecard">  <Box px={2}  > <CiHeart  size={30}  /></Box> </Link> 
+                 <Link to="/cart">   <Box px={2} > <BsBag size={30}  /></Box>  </Link> 
+                <Image px={2} height={10} borderRadius="50%" size={30} src="https://as1.ftcdn.net/v2/jpg/01/85/97/08/1000_F_185970884_vu3JsjQgKW0IE00WpRsNiMtfptfcPtDA.jpg" /> </Flex>
 
              </Box>
     
