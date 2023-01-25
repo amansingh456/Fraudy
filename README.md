@@ -2,8 +2,8 @@
 *About Website..*
 *Fraudy is Ecommerce site for the newest & trending fashion accessories and online shop that offered high quality products at an affordable price. You can shop cloths,accessories.*
 
-##ScreenShot
-![]()
+## ScreenShot
+![](https://github.com/amansingh456/shallow-creature-244/blob/main/Screenshot%20(76).png)
 ![]()
 
 
