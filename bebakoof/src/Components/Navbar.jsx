@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
 
-    <Box width="100%"  >
+    <Box width="100%" position="sticky" top={0} zIndex="100000" >
         <Box bg="gray.200"> 
         <Flex  display= {["none","none","none","flex"]} position="relative" width="80%" p={2}  height="20px" margin="auto" alignItems="center" >
       
@@ -128,6 +128,7 @@ const Navbar = () => {
         <a> <Text>Plus Size Bottomwear</Text>  </a>
         <a> <Text>All bottomWear</Text>  </a>
     </VStack >
+    
     <VStack className='stack1'  >
        <a href="" >  <Heading  size="md"  >
             WinterWear
@@ -228,6 +229,7 @@ const Navbar = () => {
         <a> <Text>Plus Size Bottomwear</Text>  </a>
         <a> <Text>All bottomWear</Text>  </a>
     </VStack >
+   
     <VStack className='stack1'  >
        <a href="" >  <Heading  size="md"  >
             WinterWear
@@ -357,11 +359,14 @@ const Navbar = () => {
 </Box>
             </VStack> </Flex>  <Spacer/> <Input border="1px solid black" display={["none","none","none","block"]} placeholder='search by product , category or collection' width={300} />  {auth? <Box py={2} className="signupbox"  position="relative" display={["none","none","none","block"]} px={2} > <VscAccount size={25} /><VStack className='signup' display="none" ml={-20}  backgroundColor="white" width="200px"   position="absolute" >
             <Link><Text  className='Text' >{names}</Text></Link>
-            <Link><Text className='Text' >My Wishlist</Text></Link>
+            <Link to="/maylikecard" ><Text className='Text' >My Wishlist</Text></Link>
             <Link to="/cart" ><Text className='Text' >My Bag</Text></Link>
             <Link><Text className='Text' >My account</Text></Link>
             <Link><Text onClick={logout} className='Text' >Logout</Text></Link>
-                </VStack>  </Box>:<Link to="/Signup"  >  <Text  display={["none","none","none","block"]} px={2} >LOGIN</Text> </Link> } <Link>  <Box px={2}  > <CiHeart  size={30}  /></Box> </Link> <Link to="/cart">   <Box px={2} > <BsBag size={30}  /></Box>  </Link> <Image px={2} height={10} borderRadius="50%" size={30} src="https://as1.ftcdn.net/v2/jpg/01/85/97/08/1000_F_185970884_vu3JsjQgKW0IE00WpRsNiMtfptfcPtDA.jpg" /> </Flex>
+                </VStack>  </Box>:<Link to="/Signup"  >  <Text  display={["none","none","none","block"]} px={2} >LOGIN</Text> </Link> }
+                 <Link to="/maylikecard">  <Box px={2}  > <CiHeart  size={30}  /></Box> </Link> 
+                 <Link to="/cart">   <Box px={2} > <BsBag size={30}  /></Box>  </Link> 
+                <Image px={2} height={10} borderRadius="50%" size={30} src="https://as1.ftcdn.net/v2/jpg/01/85/97/08/1000_F_185970884_vu3JsjQgKW0IE00WpRsNiMtfptfcPtDA.jpg" /> </Flex>
 
              </Box>
     

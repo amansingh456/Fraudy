@@ -134,6 +134,7 @@ const MainContainer = styled.div`
     width: 100%;
     height: auto;
     background-color: #000000;
+    margin-top:50px;
 `
 
 const TopSection = styled.div`
