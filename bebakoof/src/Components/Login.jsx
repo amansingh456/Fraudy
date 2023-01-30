@@ -3,12 +3,14 @@ import React, { useEffect, useState } from 'react'
 import { signInWithEmailAndPassword , updateProfile } from 'firebase/auth';
 import { auth } from './firebase';
 import { useNavigate  } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as yup from "yup"
 import { useFormik } from 'formik'
 import swal from 'sweetalert';
+import { LoginFunctionSuccess } from '../AuthReducer/action';
 const Login = () => {
 
+   const dispatch = useDispatch()
      const navigate = useNavigate()
 
     const[email,Setemail] = useState("")
@@ -35,7 +37,7 @@ const Login = () => {
       }),
       onSubmit :  (values,actions) =>{
         
-          signInWithEmailAndPassword(auth,values.email,values.password).then(res=>{console.log(res);navigate("/") ;swal("Login Success", "Happy Shopping", "success")} )
+          signInWithEmailAndPassword(auth,values.email,values.password).then(res=>{dispatch(LoginFunctionSuccess());navigate("/") ;swal("Login Success", "Happy Shopping", "success")} )
           .catch(err=>console.log(err))
           actions.resetForm()
       }
