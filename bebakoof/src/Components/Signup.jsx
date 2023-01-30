@@ -7,7 +7,7 @@ import { auth, provider } from './firebase';
 import {FcGoogle } from "react-icons/fc";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate  } from 'react-router-dom';
-import { LoginFunctionSuccess } from '../AuthReducer/action';
+import { SignupFunctionSuccess } from '../AuthReducer/action';
 import * as yup from "yup"
 import { useFormik } from 'formik'
 import swal from 'sweetalert';
@@ -39,7 +39,7 @@ const Signup = () => {
       onSubmit :  (values,actions) =>{
         Setclose(true)
     const emails = values.email; const names = values.name
-    createUserWithEmailAndPassword(auth,values.email,values.password).then(res=>{console.log(res);dispatch(LoginFunctionSuccess({names,emails})); navigate("/Login");
+    createUserWithEmailAndPassword(auth,values.email,values.password).then(res=>{console.log(res);dispatch(SignupFunctionSuccess({names,emails})); navigate("/Login");
     swal("Signup Success", "You are redirected to Login Page!", "success") ;} )
 
           .catch(err=>console.log(err));

@@ -1,4 +1,4 @@
-import { LoginSuccess, LogoutSuccess } from "./actionType"
+import { SignupSuccess, LogoutSuccess,LoginSuccess } from "./actionType"
 
 const initialState={
     name: "",
@@ -10,12 +10,15 @@ export const reducer = (state=initialState,{type,payload})=>{
 
     switch(type){
 
-    case  LoginSuccess :
-        return{...state,name:payload.names,email:payload.emails,isAuth:true}
+    case  SignupSuccess :
+        return{...state,name:payload.names,email:payload.emails}
    
    case LogoutSuccess:
     return{...state,name:"",email:"",isAuth:false}
      
+
+    case LoginSuccess:
+        return{...state,isAuth:true}
    
 
      default :
