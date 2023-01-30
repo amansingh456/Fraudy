@@ -1,7 +1,7 @@
-import {Text,Box,Center,Button,Heading, Link} from "@chakra-ui/react"
+import {Text,Box,Center,Button,Heading} from "@chakra-ui/react"
 import { ArrowRightIcon } from '@chakra-ui/icons'
 import { useSelector } from "react-redux";
-
+import {Link} from "react-router-dom"
 
 export const CartRight = () => {
    const cart = useSelector((store)=>store.DataReducer.cart)
@@ -66,8 +66,10 @@ export const CartRight = () => {
                                     
                                 </Box>
                                
+
+                               
                                 <Button w="340px" fontSize={"18px"} h="60px"  border="none" bg="rgb(66, 162, 162)" borderRadius="5px">
-                                    <Link href="/payment" textDecoration={"none"}  color="white"> CHECK OUT </Link>
+                                    <Link to="/payment" textDecoration={"none"}  color="white"> CHECK OUT </Link>
                                 </Button>
                               
                         </Box>

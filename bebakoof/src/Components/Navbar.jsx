@@ -8,9 +8,9 @@ import { Link } from "react-router-dom"
 import "../Styles/Navbar.css"
 import { CiHeart} from "react-icons/ci";
 import { BsBag } from "react-icons/bs";
-import fraudy from "../Images/fraudyReal.png"
+import fraudy from "../images/fraudyReal.png"
 import { GiHamburgerMenu } from "react-icons/gi";
-import logo from "../Images/logo.png" 
+import logo from "../images/logo.png" 
 import { useDispatch, useSelector } from 'react-redux';
 import { VscAccount } from "react-icons/vsc";
 import { LogoutFunctionSuccess } from '../AuthReducer/action';
@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
 
-    <Box width="100%"  >
+    <Box width="100%" position="sticky" top={0} zIndex="100000" >
         <Box bg="gray.200"> 
         <Flex  display= {["none","none","none","flex"]} position="relative" width="80%" p={2}  height="20px" margin="auto" alignItems="center" >
       
@@ -359,7 +359,7 @@ const Navbar = () => {
 </Box>
             </VStack> </Flex>  <Spacer/> <Input border="1px solid black" display={["none","none","none","block"]} placeholder='search by product , category or collection' width={300} />  {auth? <Box py={2} className="signupbox"  position="relative" display={["none","none","none","block"]} px={2} > <VscAccount size={25} /><VStack className='signup' display="none" ml={-20}  backgroundColor="white" width="200px"   position="absolute" >
             <Link><Text  className='Text' >{names}</Text></Link>
-            <Link><Text className='Text' >My Wishlist</Text></Link>
+            <Link to="/maylikecard" ><Text className='Text' >My Wishlist</Text></Link>
             <Link to="/cart" ><Text className='Text' >My Bag</Text></Link>
             <Link><Text className='Text' >My account</Text></Link>
             <Link><Text onClick={logout} className='Text' >Logout</Text></Link>
