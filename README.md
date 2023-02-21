@@ -15,7 +15,7 @@
 
 - Github:(https://github.com/vivekgoswami934)
 - Linkedin:(https://www.linkedin.com/in/vivek-goswami-680a91203/)
-- Email:()
+
 
 
 # 🧔🏻 **Aman Singh Rajawat** `Team Lead`
