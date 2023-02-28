@@ -5,7 +5,7 @@
 ## ScreenShot
 ![](https://github.com/amansingh456/shallow-creature-244/blob/main/Screenshot%20(76).png)
 ![](https://github.com/amansingh456/shallow-creature-244/blob/main/Screenshot%20(77).png)
-![](https://github.com/amansingh456/shallow-creature-244/blob/main/Screenshot%20(77).png)
+![image](https://user-images.githubusercontent.com/107528217/221772654-933ec72d-2113-4476-8036-659d54d9763e.png)
 
 
 ## 🤝 **_Collaborators_**
