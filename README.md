@@ -42,9 +42,9 @@
 
 # 👱🏻‍♂️ **Ravichandra Koli**
 
-- Github:()
-- Linkedin:()
-- Email: ()
+- Github:(https://github.co/Ravi515K)
+- Linkedin:(https://www.linkedin.com/in/pratik-mate-a6a62919b/)
+- Email: (koliravi95@gmail.com)
 
 # 🧑🏻‍🦰 **Lipan Padhan**
 
