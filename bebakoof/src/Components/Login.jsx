@@ -65,13 +65,13 @@ const Login = () => {
   <Heading>Log In</Heading>
 <FormControl isInvalid={formik.errors.email && formik.touched.email} >
     <FormLabel>email</FormLabel>
-    <Input name="email" type="email"  placeholder="enter email" onChange={formik.handleChange}  value={formik.values.email} 
+    <Input name="email" type="email"  placeholder="Enter email" onChange={formik.handleChange}  value={formik.values.email} 
     onBlur={formik.handleBlur} />
     <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
 </FormControl>
 <FormControl isInvalid={formik.errors.password && formik.touched.password } >
     <FormLabel>Password</FormLabel>
-    <Input  name="password"  type="password"  placeholder="enter Username" onChange={formik.handleChange} value={formik.values.password} 
+    <Input  name="password"  type="password"  placeholder="Enter password" onChange={formik.handleChange} value={formik.values.password} 
       onBlur={formik.handleBlur} />
     <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
 </FormControl>

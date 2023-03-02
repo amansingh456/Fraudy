@@ -26,7 +26,7 @@ const LastTopSection = () => {
         </GangsImageWrapper>
      </GangsWrapper> 
      <CategoriesWrapper>
-        <Heading>CATEGORIES TO BAG</Heading>
+        <Heading style={{marginTop:"20px"}}>CATEGORIES TO BAG</Heading>
         <CategoriesData>
             {CategoriesImgData.map((el,ind)=><CtaegoriesImg key={ind} src={el.url}/>)}
         </CategoriesData>
@@ -46,6 +46,7 @@ const Heading = styled.p`
     font-size: 20px;
     letter-spacing: 2px;
     font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
 `
 
 const GangsImageWrapper = styled.div`

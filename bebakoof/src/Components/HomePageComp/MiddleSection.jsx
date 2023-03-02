@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import bgImg from "../../images/ye.webp"
+// import bgImg from "../../images/ye.webp"
+import bgImg from "../../Images/ye.webp"
 
 
 
@@ -48,7 +49,7 @@ const MiddleSection = () => {
                 </AllSingleDiv>
             </CategoriesWrapper>
             <BiggestDealsWrapper>
-                <Heading style={{paddingTop:"10px"}}>BIGGEST DEALS!</Heading>   
+                <Heading style={{paddingTop:"20px"}}>BIGGEST DEALS!</Heading>   
                 <SingleDataContainer>
                     {BiggestDealsData.map((el,ind)=>{
                         return(
@@ -91,7 +92,8 @@ const Heading = styled.p`
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 2px;
-    margin-bottom: 0;
+    margin-bottom: 0px;
+    margin-Top: 30px;
     /* font-weight: 500; */
 `
 const AllSingleDiv = styled.div`

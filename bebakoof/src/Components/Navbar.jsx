@@ -8,9 +8,9 @@ import { Link } from "react-router-dom"
 import "../Styles/Navbar.css"
 import { CiHeart} from "react-icons/ci";
 import { BsBag } from "react-icons/bs";
-import fraudy from "../images/fraudyReal.png"
+import fraudy from "../Images/fraudyReal.png"
 import { GiHamburgerMenu } from "react-icons/gi";
-import logo from "../images/logo.png" 
+import logo from "../Images/logo.png" 
 import { useDispatch, useSelector } from 'react-redux';
 import { VscAccount } from "react-icons/vsc";
 import { LogoutFunctionSuccess } from '../AuthReducer/action';

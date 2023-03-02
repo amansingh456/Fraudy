@@ -1,5 +1,5 @@
 import React from 'react'
-import Footer from '../Components/Footer/Footer'
+
 import CarouselFirst from '../Components/HomePageComp/CarouselFirst'
 import FinalLastSection from '../Components/HomePageComp/FinalLastSection'
 import LastCarousel from '../Components/HomePageComp/LastCarousel'
@@ -16,7 +16,6 @@ const HomePage = () => {
         <LastTopSection/>
         <LastCarousel/>
         <FinalLastSection/>
-        <Footer/>
     </>
   )
 }

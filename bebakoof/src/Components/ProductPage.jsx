@@ -37,6 +37,7 @@ const ProductPage = () => {
       }
     });
     dispatch(addToWishlist(FilterData[0]));
+    alert("product added to wishlist")
   };
   const handleCart = (id) => {
     let Fill = products.filter((el) => {

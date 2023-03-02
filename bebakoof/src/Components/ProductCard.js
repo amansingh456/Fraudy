@@ -48,7 +48,7 @@ export const ProductCard = () => {
     //console.log(cart,"cart-total")
     return (
         <Box w="100%" h="auto" p="10px">
-            {cart.length>0?<Heading textAlign={"left"}>My Bag {cart.length} item</Heading>:""}
+            {cart.length>0?<Heading style={{marginBottom:"20px"}} textAlign={"left"}>Bag have {cart.length} item</Heading>:""}
             
             {
                 cart.length > 0 ?

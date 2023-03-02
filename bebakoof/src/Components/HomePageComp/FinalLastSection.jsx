@@ -37,6 +37,7 @@ const Heading = styled.p`
     letter-spacing: 2px;
     font-family: 'Poppins', sans-serif;
     margin-top: -40px;
+    margin-bottom: 10px;
 `
 
 const GangsImageWrapper = styled.div`

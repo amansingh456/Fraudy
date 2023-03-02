@@ -7,7 +7,7 @@ import { auth, provider } from './firebase';
 import {FcGoogle } from "react-icons/fc";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate  } from 'react-router-dom';
-import { SignupFunctionSuccess } from '../AuthReducer/action';
+import { LoginFunctionSuccess, SignupFunctionSuccess } from '../AuthReducer/action';
 import * as yup from "yup"
 import { useFormik } from 'formik'
 import swal from 'sweetalert';
@@ -92,19 +92,19 @@ const googleSignin=()=>{
 
   <FormControl isInvalid={formik.errors.name && formik.touched.name } >
     <FormLabel>name</FormLabel>
-    <Input name="name" type="name"  placeholder="enter name" onChange={formik.handleChange}  value={formik.values.name} 
+    <Input name="name" type="name"  placeholder="Enter Name" onChange={formik.handleChange}  value={formik.values.name} 
     onBlur={formik.handleBlur} />
     <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
 </FormControl>
 <FormControl isInvalid={formik.errors.email && formik.touched.email } >
     <FormLabel>Email</FormLabel>
-    <Input name="email" type="email"  placeholder="enter email" onChange={formik.handleChange}  value={formik.values.email} 
+    <Input name="email" type="email"  placeholder="Enter Email" onChange={formik.handleChange}  value={formik.values.email} 
     onBlur={formik.handleBlur} />
     <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
 </FormControl>
 <FormControl isInvalid={formik.errors.password && formik.touched.password } >
     <FormLabel>Password</FormLabel>
-    <Input  name="password"  type="password"  placeholder="enter Username" onChange={formik.handleChange} value={formik.values.password} 
+    <Input  name="password"  type="password"  placeholder="Enter Password" onChange={formik.handleChange} value={formik.values.password} 
       onBlur={formik.handleBlur} />
     <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
 </FormControl>
