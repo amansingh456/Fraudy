@@ -71,7 +71,7 @@ const Login = () => {
 </FormControl>
 <FormControl isInvalid={formik.errors.password && formik.touched.password } >
     <FormLabel>Password</FormLabel>
-    <Input  name="password"  type="password"  placeholder="Enter Password" onChange={formik.handleChange} value={formik.values.password} 
+    <Input  name="password"  type="password"  placeholder="Enter Username" onChange={formik.handleChange} value={formik.values.password} 
       onBlur={formik.handleBlur} />
     <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
 </FormControl>
