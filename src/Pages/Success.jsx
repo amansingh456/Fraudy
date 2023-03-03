@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Alert,
   AlertIcon,
@@ -7,9 +7,19 @@ import {
   Box,
   Button,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Success = () => {
 //   let DiscountPrice = JSON.parse(localStorage.getItem("DiscountPrice")) || "";
+
+const navigate = useNavigate()
+
+
+useEffect(()=>{
+  setTimeout(()=>{
+    navigate("/")
+  },3000)
+},[])
+
 
   return (
     <Box height={600} bgColor="#63af5c" style={{margin:"0", padding:"0"}}>

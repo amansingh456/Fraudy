@@ -101,8 +101,8 @@ const Heading = styled.p`
     font-size: 20px;
     letter-spacing: 2px;
     font-family: 'Poppins', sans-serif;
-    /* margin-top: 30px;
-    margin-bottom: 20px; */
+    margin-top: 30px;
+    margin-bottom: 20px;
 `
 
 
