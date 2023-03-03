@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { addToCart, addToWishlist, getProducts, moveToCart, moveToWishlist } from "../Redux/action";
 import { AiOutlineHeart } from "react-icons/ai";
+import { useToast } from '@chakra-ui/react'
 import "./ProductPageStyles.css";
 import Sidebar from "./Sidebar";
 const ProductPage = () => {
@@ -12,6 +13,7 @@ const ProductPage = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const [searchParams] = useSearchParams();
+  const toast = useToast()
 
   // console.log(products)  
   // console.log(eee)  
@@ -37,7 +39,14 @@ const ProductPage = () => {
       }
     });
     dispatch(addToWishlist(FilterData[0]));
-    alert("product added to wishlist")
+    // alert("product added to wishlist")
+    toast({
+      description: "Product is added to Wishlist",
+      status: 'success',
+      variant:"top-accent",
+      duration: 5000,
+      isClosable: true,
+    })
   };
   const handleCart = (id) => {
     let Fill = products.filter((el) => {
@@ -45,7 +54,14 @@ const ProductPage = () => {
         return el;
       }
     });
-    window.alert("added successful")
+    // window.alert("added successful")
+    toast({
+      description: "Product is added to cart",
+      status: 'success',
+      variant:"left-accent",
+      duration: 5000,
+      isClosable: true,
+    })
     dispatch(addToCart(Fill[0]));
   };
 

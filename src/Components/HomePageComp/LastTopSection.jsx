@@ -46,7 +46,7 @@ const Heading = styled.p`
     font-size: 20px;
     letter-spacing: 2px;
     font-family: 'Poppins', sans-serif;
-    /* margin-bottom: 10px; */
+    margin-bottom: 15px;
 `
 
 const GangsImageWrapper = styled.div`

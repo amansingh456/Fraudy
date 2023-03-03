@@ -1,5 +1,5 @@
 // import { Button } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
 import styled from 'styled-components'
 
@@ -14,7 +14,13 @@ const Payment = () => {
     const handleSuccess = () => {
     
         navigate("/success");
+        
     };
+
+    
+
+
+    
 
   return (
     <>
