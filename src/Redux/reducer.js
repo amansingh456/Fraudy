@@ -56,7 +56,7 @@ export const reducer = (state = initialState, { type, payload }) => {
     case GET_CART_REQUEST:
       return { ...state,isLoading: true };
     case GET_CART_SUCCESS:
-      console.log(payload)
+      // console.log(payload)
       return { ...state, isLoading: false, cart: payload };
     case GET_CART_FAILURE:
       return { ...state, isLoading: false, isError: true };

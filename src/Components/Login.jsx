@@ -1,4 +1,4 @@
-import { Box, Button, FormControl, FormErrorMessage, FormLabel, Heading, Input, VStack } from '@chakra-ui/react'
+import { Box, Button, FormControl, FormErrorMessage, FormLabel, Heading, Input, VStack  , useToast } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { signInWithEmailAndPassword , updateProfile } from 'firebase/auth';
 import { auth } from './firebase';
@@ -23,7 +23,7 @@ const Login = () => {
    const emails =  useSelector((store)=>
    store.AuthReducer.email
   )
-    console.log(names,emails)
+    // console.log(names,emails)
 
 
     const formik = useFormik({
@@ -37,7 +37,7 @@ const Login = () => {
       }),
       onSubmit :  (values,actions) =>{
         
-          signInWithEmailAndPassword(auth,values.email,values.password).then(res=>{dispatch(LoginFunctionSuccess());navigate("/") ;swal("Login Success", "Happy Shopping", "success")} )
+          signInWithEmailAndPassword(auth,values.email,values.password).then(res=>{localStorage.setItem("auth" , true);dispatch(LoginFunctionSuccess());navigate("/") ;swal("Login Success", "Happy Shopping", "success")} )
           .catch(err=>console.log(err))
           actions.resetForm()
       }
@@ -71,7 +71,7 @@ const Login = () => {
 </FormControl>
 <FormControl isInvalid={formik.errors.password && formik.touched.password } >
     <FormLabel>Password</FormLabel>
-    <Input  name="password"  type="password"  placeholder="Enter Username" onChange={formik.handleChange} value={formik.values.password} 
+    <Input  name="password"  type="password"  placeholder="Enter Password" onChange={formik.handleChange} value={formik.values.password} 
       onBlur={formik.handleBlur} />
     <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
 </FormControl>
