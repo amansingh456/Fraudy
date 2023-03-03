@@ -3,7 +3,7 @@ import { SignupSuccess, LogoutSuccess,LoginSuccess } from "./actionType"
 const initialState={
     name: "",
     email:"",
-    isAuth:false,
+    isAuth: localStorage.getItem("auth") || "false" 
 }
 
 export const reducer = (state=initialState,{type,payload})=>{
@@ -14,11 +14,13 @@ export const reducer = (state=initialState,{type,payload})=>{
         return{...state,name:payload.names,email:payload.emails}
    
    case LogoutSuccess:
-    return{...state,name:"",email:"",isAuth:false}
+    return{name:"",email:"",isAuth:"false"}
      
 
     case LoginSuccess:
-        return{...state,isAuth:true}
+      
+        return{...state,isAuth:"true"}
+     
    
 
      default :

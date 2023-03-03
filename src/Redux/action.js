@@ -1,7 +1,7 @@
 import * as types from "./actionTypes";
 import axios from "axios";
 
-console.log(types)
+// console.log(types)
 const getProductRequest = () => {
   return {
     type: types.GET_USER_REQUEST,
@@ -29,7 +29,7 @@ const getCartRequest = () => {
 };
 
 const getCartSuccess = (payload) => {
-  console.log(payload)
+  // console.log(payload)
   return {
     type: types.GET_CART_SUCCESS,
     payload,
@@ -153,7 +153,7 @@ export const getProducts = (params) => (dispatch) => {
   return axios
     .get(`https://user-data-d84k.onrender.com/products`, params)
     .then((res) => {
-      console.log(res)
+      
       dispatch(getProductSuccess(res.data));
     })
     .catch((e) => {
