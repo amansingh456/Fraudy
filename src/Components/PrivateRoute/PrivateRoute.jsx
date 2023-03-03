@@ -8,7 +8,7 @@ const PrivateRoute = ({children}) => {
   const isAuth = useSelector((store)=>store.AuthReducer.isAuth)
 
 
-  if(!isAuth){
+  if(isAuth=="false"){
     return <Navigate to="/Signup"  />
   }
   
